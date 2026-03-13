@@ -64,6 +64,9 @@
   aspect-ratio: 4/3;
   cursor: pointer;
   background: var(--color-black-soft);
+  border: none;
+  padding: 0;
+  text-align: inherit;
 }
 
 .gallery__img {
@@ -75,6 +78,11 @@
 
 .gallery__item:hover .gallery__img {
   transform: scale(1.06);
+}
+
+.gallery__item:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
 }
 
 /* Overlay hover */
@@ -207,6 +215,8 @@
   font-size: 0.875rem;
   transition: background var(--transition);
   backdrop-filter: blur(4px);
+  border: none;
+  cursor: pointer;
 }
 
 .gallery__lightbox-close:hover {

@@ -14,7 +14,6 @@ export default function Contact() {
   const sectionRef = useRef(null)
   const isInView  = useInView(sectionRef, { once: true, margin: '-80px 0px' })
 
-  // TODO: Integrar com backend (ex: EmailJS, Formspree, API própria) para envio real de e-mail
   const {
     register,
     handleSubmit,
@@ -22,18 +21,31 @@ export default function Contact() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm()
 
-  const onSubmit = async (data) => {
-    // TODO: Enviar dados para o backend / serviço de e-mail
-    // Exemplo com EmailJS:
-    // await emailjs.send(SERVICE_ID, TEMPLATE_ID, data, PUBLIC_KEY)
-    console.log('Formulário enviado:', data)
-    await new Promise((r) => setTimeout(r, 1200)) // simula delay
-    reset()
+  const getServiceLabel = (value) =>
+    serviceOptions.find((opt) => opt.value === value)?.label || 'Não informado'
+
+  const buildWhatsAppMsg = (data) => {
+    if (!data) {
+      return getWhatsAppLink('Olá, Desiree! Vim pelo site e gostaria de agendar um horário.')
+    }
+
+    const message = [
+      'Olá, Desiree! Vim pelo site e quero agendar um horário.',
+      '',
+      `Nome: ${data.name}`,
+      `E-mail: ${data.email}`,
+      `Telefone: ${data.phone || 'Não informado'}`,
+      `Serviço: ${getServiceLabel(data.service)}`,
+      `Mensagem: ${data.message}`,
+    ].join('\n')
+
+    return getWhatsAppLink(message)
   }
 
-  // Monta mensagem de WhatsApp a partir do formulário preenchido
-  const buildWhatsAppMsg = () =>
-    getWhatsAppLink('Olá, Desiree! Vim pelo site e gostaria de agendar um horário.')
+  const onSubmit = async (data) => {
+    window.open(buildWhatsAppMsg(data), '_blank', 'noopener,noreferrer')
+    reset()
+  }
 
   return (
     <section id="contato" className="contact section" ref={sectionRef}>
@@ -91,7 +103,7 @@ export default function Contact() {
                 <div className="contact__detail-icon"><FiPhone /></div>
                 <div>
                   <strong>Telefone</strong>
-                  <a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a>
+                  <a href={`tel:+${siteConfig.phoneRaw}`}>{siteConfig.phone}</a>
                 </div>
               </li>
               <li className="contact__detail">
@@ -126,16 +138,18 @@ export default function Contact() {
                   <FiInstagram size={18} />
                   <span>Instagram</span>
                 </a>
-                <a
-                  href={siteConfig.social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact__social-btn contact__social-btn--facebook"
-                  aria-label="Facebook"
-                >
-                  <FiFacebook size={18} />
-                  <span>Facebook</span>
-                </a>
+                {siteConfig.social.facebook && (
+                  <a
+                    href={siteConfig.social.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact__social-btn contact__social-btn--facebook"
+                    aria-label="Facebook"
+                  >
+                    <FiFacebook size={18} />
+                    <span>Facebook</span>
+                  </a>
+                )}
                 <a
                   href={buildWhatsAppMsg()}
                   target="_blank"

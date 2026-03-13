@@ -62,10 +62,10 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">Depoimentos</span>
-          <h2 className="section-title">O Que Dizem Nossas Clientes</h2>
+          <h2 className="section-title">O Que Dizem Nossos Clientes</h2>
           <div className="divider divider--center" />
           <p className="section-subtitle testimonials__subtitle">
-            Cada sorriso e feedabck positivo é a nossa maior realização.
+            Cada sorriso e feedback positivo é a nossa maior realização.
           </p>
         </motion.div>
 

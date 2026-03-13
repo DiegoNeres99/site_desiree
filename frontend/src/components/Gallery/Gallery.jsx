@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { FiInstagram, FiZoomIn } from 'react-icons/fi'
 import { galleryImages, galleryCategories } from '../../data/content'
@@ -14,6 +14,17 @@ export default function Gallery() {
   const filtered = activeCategory === 'all'
     ? galleryImages
     : galleryImages.filter((img) => img.category === activeCategory)
+
+  useEffect(() => {
+    if (!lightbox) return undefined
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setLightbox(null)
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [lightbox])
 
   return (
     <section id="galeria" className="gallery section section-dark" ref={sectionRef}>
@@ -57,8 +68,9 @@ export default function Gallery() {
         <motion.div className="gallery__grid" layout>
           <AnimatePresence mode="popLayout">
             {filtered.map((img, i) => (
-              <motion.div
+              <motion.button
                 key={img.id}
+                type="button"
                 className="gallery__item"
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -66,6 +78,7 @@ export default function Gallery() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 onClick={() => setLightbox(img)}
+                aria-label={`Abrir imagem: ${img.title}`}
               >
                 <img
                   src={img.image}
@@ -78,7 +91,7 @@ export default function Gallery() {
                   <FiZoomIn size={28} className="gallery__item-zoom" />
                   <p className="gallery__item-title">{img.title}</p>
                 </div>
-              </motion.div>
+              </motion.button>
             ))}
           </AnimatePresence>
         </motion.div>
@@ -113,6 +126,9 @@ export default function Gallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setLightbox(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={lightbox.title}
           >
             <motion.div
               className="gallery__lightbox-inner"
@@ -128,6 +144,7 @@ export default function Gallery() {
                 <p>{lightbox.title}</p>
               </div>
               <button
+                type="button"
                 className="gallery__lightbox-close"
                 onClick={() => setLightbox(null)}
                 aria-label="Fechar"

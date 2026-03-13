@@ -17,6 +17,7 @@ export const siteConfig = {
   whatsappMessage: "Olá, Desiree! Gostaria de agendar um horário.",
   email: "desire.honorio@gmail.com",
   phone: "+55 43 9988-0294",
+  phoneRaw: "554399880294",
 
   // ─── Endereço ─────────────────────────────────────────────────────────────────
   // TODO: Substituir pelo endereço real do estúdio
@@ -42,18 +43,18 @@ export const siteConfig = {
   social: {
     instagram: "https://www.instagram.com/desireehonorio/",
     instagramHandle: "@desireehonorio",
-    // TODO: Substituir pelos links reais de Facebook e TikTok
-    //facebook: "https://www.facebook.com/desireehonorio",
+    // Sem Facebook no momento
+    // facebook: "https://www.facebook.com/desireehonorio",
     //tiktok: "https://www.tiktok.com/@desireehonorio",
   },
 
   // ─── SEO ─────────────────────────────────────────────────────────────────────
   seo: {
-    title: "Desiree Honório | Design de Sobrancelhas & Micropigmentação",
+    title: "Desiree Honório | Estética em Arapongas",
     description:
-      "Especialista em design de sobrancelhas, remoção de tatuagem a laser e micropigmentação em São Paulo. Agende seu horário!",
+      "Especialista em design de sobrancelhas, remoção de tatuagem a laser e micropigmentação em Arapongas - PR. Agende seu horário!",
     keywords:
-      "design de sobrancelhas, micropigmentação, remoção de tatuagem laser, beleza SP, Desiree Honório",
+      "design de sobrancelhas em Arapongas, micropigmentação em Arapongas, remoção de tatuagem a laser Arapongas, estética Arapongas PR, Desiree Honório",
     // TODO: Substituir pela URL real do site após o deploy
     siteUrl: "https://www.desireehonorio.com.br",
     // TODO: Adicionar imagem OG real (1200x630px) na pasta public/

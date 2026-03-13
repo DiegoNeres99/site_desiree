@@ -52,9 +52,11 @@ export default function Footer() {
               <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="footer__social" aria-label="Instagram">
                 <FiInstagram />
               </a>
-              <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="footer__social" aria-label="Facebook">
-                <FiFacebook />
-              </a>
+              {siteConfig.social.facebook && (
+                <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="footer__social" aria-label="Facebook">
+                  <FiFacebook />
+                </a>
+              )}
               <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="footer__social footer__social--whatsapp" aria-label="WhatsApp">
                 <FaWhatsapp />
               </a>
@@ -107,7 +109,7 @@ export default function Footer() {
               </li>
               <li>
                 <FiPhone className="footer__contact-icon" />
-                <a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a>
+                <a href={`tel:+${siteConfig.phoneRaw}`}>{siteConfig.phone}</a>
               </li>
               <li>
                 <FiMail className="footer__contact-icon" />

@@ -230,7 +230,7 @@ export const galleryImages = [
   {
     id: 10,
     category: "sobrancelha",
-    label: "sobrancelha",
+    label: "Sobrancelha",
     title: "Design de Sobrancelhas",
     image: "/gallery/sobrancelha5.jpg",
   }

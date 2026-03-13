@@ -13,6 +13,11 @@ import { siteConfig, getWhatsAppLink } from './config/site'
 import './styles/globals.css'
 
 export default function App() {
+  const sameAs = [
+    siteConfig.social.instagram,
+    siteConfig.social.facebook,
+  ].filter(Boolean)
+
   return (
     <HelmetProvider>
       {/* ── SEO ─────────────────────────────────────────────────── */}
@@ -55,8 +60,7 @@ export default function App() {
             "addressCountry": "BR",
           },
           "sameAs": [
-            siteConfig.social.instagram,
-            siteConfig.social.facebook,
+            ...sameAs,
           ],
         })}</script>
       </Helmet>
