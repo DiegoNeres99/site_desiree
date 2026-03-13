@@ -46,7 +46,7 @@ export default function About() {
           {/* TODO: Substituir pela foto real da Desiree */}
           <div className="about__image-frame">
             <img
-              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=85"
+              src="/gallery/quem-sou-eu.png"
               alt="Desiree Honório — Especialista em Estética"
               className="about__photo"
               loading="lazy"
@@ -77,11 +77,11 @@ export default function About() {
           <div className="divider" />
 
           <p className="about__text">
-            Sou <strong>Desiree Honório</strong>, especialista em estética com mais de{' '}
-            <strong>8 anos de experiência</strong> dedicados à arte de realçar a beleza
-            natural de cada pessoa. Minha jornada começou com uma paixão genuína pela
-            transformação e cuidado, e hoje atendo centenas de clientes que buscam
-            resultados naturais e duradouros.
+            Sou <strong>Desiree Honório</strong>, Sou a mãe do Vítor — a parte mais bonita da minha história.
+            Caminho guiada pela fé, aprendendo a ser uma mulher melhor a cada fase.
+            Entre livros, vinhos e aventuras, encontrei meu jeito de crescer:
+            vivendo de verdade.
+            E é isso que compartilho aqui — não perfeição, mas evolução.
           </p>
           <p className="about__text">
             Sou formada e certificada nas técnicas mais modernas do mercado, incluindo

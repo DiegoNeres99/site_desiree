@@ -61,7 +61,7 @@
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
   cursor: pointer;
   background: var(--color-black-soft);
   border: none;

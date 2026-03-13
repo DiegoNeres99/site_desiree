@@ -19,7 +19,7 @@ export const services = [
     // TODO: Atualizar preços reais
     price: "A partir de R$ 60",
     image:
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80",
+      "/gallery/design-sobrancelhas.jpg",
     category: "sobrancelha",
     features: [
       "Mapeamento facial personalizado",
@@ -40,7 +40,7 @@ export const services = [
     duration: "Conforme o tamanho",
     price: "Consulte valores",
     image:
-      "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80",
+      "/gallery/remoção-tatuagem.jpg",
     category: "laser",
     features: [
       "Tecnologia Q-Switched",
@@ -61,7 +61,7 @@ export const services = [
     duration: "2h – 2h30",
     price: "A partir de R$ 350",
     image:
-      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
+      "/gallery/micropigmentacao-sobrancelha.jpg",
     category: "sobrancelha",
     features: [
       "Técnica fio a fio (hairstrokes)",
@@ -164,76 +164,98 @@ export const galleryImages = [
     category: "sobrancelha",
     label: "Sobrancelha",
     title: "Micropigmentação — Antes e Depois",
-    image: "/gallery/sobrancelha1.jpg",
+    image: "/gallery-sobrancelha/sobrancelha1.jpg",
   },
   {
     id: 2,
     category: "sobrancelha",
     label: "Sobrancelha",
     title: "Micropigmentação Fio a Fio — Progressão",
-    image: "/gallery/sobrancelha2.jpg",
+    image: "/gallery-sobrancelha/sobrancelha2.jpg",
   },
   {
     id: 3,
-    category: "laser",
-    label: "Laser",
-    title: "Remoção de Tatuagem",
-    image:
-      "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=80",
+    category: "sobrancelha",
+    label: "Sobrancelha",
+    title: "Sobrancelha + Cílios — Antes e Depois",
+    image: "/gallery-sobrancelha/sobrancelha3.jpg",
   },
-  {
-    id: 4,
-    category: "barba",
-    label: "Barba",
-    title: "Micropigmentação de Barba",
-    image:
-      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-  },
+  { id: 4,
+    category: "sobrancelha",
+    label: "Sobrancelha",
+    title: "Sobrancelha + Cílios — Antes e Depois",
+    image: "/gallery-sobrancelha/sobrancelha4.jpg",
+  },  
   {
     id: 5,
     category: "sobrancelha",
     label: "Sobrancelha",
-    title: "Sobrancelha + Cílios — Antes e Depois",
-    image: "/gallery/sobrancelha3.jpg",
+    title: "Design de Sobrancelhas",
+    image: "/gallery-sobrancelha/sobrancelha5.jpg",
   },
   {
     id: 6,
-    category: "laser",
-    label: "Laser",
-    title: "Sessão de Laser",
-    image:
-      "https://images.unsplash.com/photo-1547592180-85f173990554?w=500&q=80",
-  },
+    category: "sobrancelha",
+    label: "Sobrancelha",
+    title: "Coloração de Sobrancelhas",
+    image: "/gallery-sobrancelha/sobrancelha4.jpg",
+  },  
   {
     id: 7,
     category: "barba",
     label: "Barba",
-    title: "Definição de Barba",
+    title: "Micropigmentação de Barba",
     image:
-      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500&q=80",
-  },
+      "gallery-barba/barba1.jpg",
+  }, 
   {
     id: 8,
-    category: "sobrancelha",
-    label: "Sobrancelha",
-    title: "Coloração de Sobrancelhas",
-    image: "/gallery/sobrancelha4.jpg",
+    category: "barba",
+    label: "Barba",
+    title: "Definição de Barba",
+    image:
+      "gallery-barba/barba2.jpg",
   },
   {
     id: 9,
+    category: "barba",
+    label: "Barba",
+    title: "Definição de Barba",
+    image:
+      "gallery-barba/barba3.jpg",
+  },
+  {
+    id: 10,
+    category: "barba",
+    label: "Barba",
+    title: "Definição de Barba",
+    image:
+      "gallery-barba/barba4.jpg",
+  },
+  {
+    id: 11,
+    category: "barba",
+    label: "Barba",
+    title: "Definição de Barba",
+    image:
+      "gallery-barba/barba5.jpg",
+  },
+  {
+    id: 12,
+    category: "barba",
+    label: "Barba",
+    title: "Definição de Barba",
+    image:
+      "gallery-barba/barba6.jpg",
+  }, 
+  {
+    id: 15,
     category: "laser",
     label: "Laser",
     title: "Tratamento a Laser",
     image:
       "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-  },
-  {
-    id: 10,
-    category: "sobrancelha",
-    label: "Sobrancelha",
-    title: "Design de Sobrancelhas",
-    image: "/gallery/sobrancelha5.jpg",
-  }
+  }, 
 ];
 
 // ─── Diferenciais (About section) ────────────────────────────────────────────
