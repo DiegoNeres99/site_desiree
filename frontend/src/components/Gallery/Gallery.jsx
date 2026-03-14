@@ -65,7 +65,10 @@ export default function Gallery() {
         </motion.div>
 
         {/* Grid */}
-        <motion.div className="gallery__grid" layout>
+        <motion.div
+          className={`gallery__grid ${activeCategory === 'all' ? 'gallery__grid--all' : ''}`}
+          layout
+        >
           <AnimatePresence mode="popLayout">
             {filtered.map((img, i) => (
               <motion.button

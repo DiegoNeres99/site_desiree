@@ -46,7 +46,7 @@ export default function About() {
           {/* TODO: Substituir pela foto real da Desiree */}
           <div className="about__image-frame">
             <img
-              src="/gallery/quem-sou-eu.png"
+              src="/gallery-my/quem-sou-eu.jpg"
               alt="Desiree Honório — Especialista em Estética"
               className="about__photo"
               loading="lazy"

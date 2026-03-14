@@ -25,7 +25,7 @@ export default function Hero() {
       {/* TODO: Substituir por foto profissional da Desiree */}
       <div className="hero__bg">
         <img
-          src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&q=85"
+          src="gallery-my/eu.jpg"
           alt="Estética e beleza — Desiree Honório"
           className="hero__bg-img"
           loading="eager"

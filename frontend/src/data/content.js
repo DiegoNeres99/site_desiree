@@ -19,7 +19,7 @@ export const services = [
     // TODO: Atualizar preços reais
     price: "A partir de R$ 60",
     image:
-      "/gallery/design-sobrancelhas.jpg",
+      "/gallery-servicos/design-sobrancelhas.jpg",
     category: "sobrancelha",
     features: [
       "Mapeamento facial personalizado",
@@ -40,7 +40,7 @@ export const services = [
     duration: "Conforme o tamanho",
     price: "Consulte valores",
     image:
-      "/gallery/remoção-tatuagem.jpg",
+      "/gallery-servicos/remoção-tatuagem.jpg",
     category: "laser",
     features: [
       "Tecnologia Q-Switched",
@@ -61,7 +61,7 @@ export const services = [
     duration: "2h – 2h30",
     price: "A partir de R$ 350",
     image:
-      "/gallery/micropigmentacao-sobrancelha.jpg",
+      "/gallery-servicos/micropigmentacao-sobrancelha.jpg",
     category: "sobrancelha",
     features: [
       "Técnica fio a fio (hairstrokes)",
@@ -247,15 +247,7 @@ export const galleryImages = [
     title: "Definição de Barba",
     image:
       "gallery-barba/barba6.jpg",
-  }, 
-  {
-    id: 15,
-    category: "laser",
-    label: "Laser",
-    title: "Tratamento a Laser",
-    image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-  }, 
+  },  
 ];
 
 // ─── Diferenciais (About section) ────────────────────────────────────────────
