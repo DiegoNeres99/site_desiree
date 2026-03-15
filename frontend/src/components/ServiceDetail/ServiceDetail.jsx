@@ -76,24 +76,24 @@ const revitalizeAudience = [
 
 const revitalizeGallery = [
   {
-    image: '/gallery-my/revitalize-portrait.jpg',
-    title: 'Presença profissional',
-    tag: 'Autoridade',
+    image: '/gallery-my/revitalize.jpg',
+    title: 'Diagnóstico personalizado',
+    tag: 'Etapa 1',
   },
   {
-    image: '/gallery-my/revitalize-pen-focus.jpg',
-    title: 'Precisão técnica no desenho',
-    tag: 'Instrumental',
+    image: '/gallery-my/revitalize2.jpg',
+    title: 'Remoção segura de pigmentação antiga',
+    tag: 'Etapa 2',
   },
   {
-    image: '/gallery-my/revitalize-pigment-focus.jpg',
-    title: 'Escolha estratégica de pigmentos',
-    tag: 'Pigmentação',
-  },
+    image: '/gallery-my/revitalize3.jpg',
+    title: 'Reparo tecidual e regeneração da pele',
+    tag: 'Etapa 3',
+  }, 
   {
-    image: '/gallery-my/revitalize-pigment-hands.jpg',
-    title: 'Cuidado em cada etapa',
-    tag: 'Protocolo',
+    image: '/gallery-my/revitalize4.jpg',
+    title: 'Revitalização e naturalidade',
+    tag: 'Etapa 4 - 5',
   },
 ]
 
@@ -250,7 +250,7 @@ export default function ServiceDetail() {
               <span className="section-label">Método RevitalizeBrow</span>
               <h2 className="section-title">Reconstrução e revitalização de sobrancelhas</h2>
               <p className="section-subtitle">
-                Remoção + reparo tecidual + reconstrução de pelos em um protocolo 2 em 1 para
+                Remoção + reparo tecidual + reconstrução de pelos em um protocolo 3 em 1 para
                 recuperar naturalidade, corrigir procedimentos antigos e devolver harmonia facial.
               </p>
             </header>

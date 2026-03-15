@@ -16,8 +16,7 @@ export const services = [
     description:
       "Cada rosto é único, e as sobrancelhas são o moldura do olhar. Utilizo técnicas precisas de mapeamento facial para criar um design exclusivo que realça sua beleza natural. O procedimento inclui análise de formato de rosto, higienização, modelagem e finalização.",
     duration: "45 min – 1h",
-    // TODO: Atualizar preços reais
-    price: "A partir de R$ 60",
+    
     image:
       "/gallery-servicos/design-sobrancelhas.jpg",
     category: "sobrancelha",
@@ -34,12 +33,12 @@ export const services = [
     icon: "eyebrow",
     title: "Método RevitalizeBrow",
     shortDescription:
-      "Remoção + reparo tecidual + reconstrução de pelos em um protocolo 2 em 1 para sobrancelhas mais naturais.",
+      "Remoção + reparo tecidual + reconstrução de pelos em um protocolo 3 em 1 para sobrancelhas mais naturais.",
     description:
       "O Método Revitalize foi desenvolvido para reconstruir e revitalizar sobrancelhas com segurança. O protocolo combina diagnóstico personalizado, remoção segura de pigmentos antigos, reparo tecidual e reconstrução estratégica para devolver harmonia facial e autoestima.",
     duration: "Etapas personalizadas",
     image:
-      "/gallery-my/revitalize-portrait.jpg",
+      "/gallery-my/revitalize.jpg",
     category: "sobrancelha",
     features: [
       "Diagnóstico personalizado",
@@ -77,8 +76,7 @@ export const services = [
       "Preenchimento e definição para homens que desejam uma barba mais densa e uniforme.",
     description:
       "Técnica exclusiva masculina que preenche falhas e define o contorno da barba com resultado natural. Indicado para homens com barba rala, com áreas sem crescimento de pelos ou que desejam um visual mais definido e uniforme sem esforço diário.",
-    duration: "2h – 3h",
-    price: "A partir de R$ 400",
+    duration: "2h – 3h",    
     image:
       "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80",
     category: "barba",

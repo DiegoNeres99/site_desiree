@@ -62,7 +62,7 @@ export default function Services() {
             return (
               <motion.article
                 key={service.id}
-                className="service-card"
+                className={`service-card service-card--${service.slug}`}
                 variants={cardVariants}
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.25 }}

@@ -24,7 +24,7 @@ const differentialIcons = [FiAward, FiUsers, FiStar, FiHeart]
 const galleryCards = [
   {
     id: 'metodo',
-    image: '/gallery-my/revitalize-pen-focus.jpg',
+    image: '/gallery-my/revitalize2.jpg',
     title: 'Criadora do Método RevitalizeBrow',
     text: 'Protocolo que trata, regenera e reconstrói sobrancelhas com foco em naturalidade.',
   },
@@ -36,7 +36,7 @@ const galleryCards = [
   },
   {
     id: 'reconstrucao',
-    image: '/gallery-my/revitalize-pigment-hands.jpg',
+    image: '/nanopigmentacao/eu.jpg',
     title: 'Reconstrução estratégica',
     text: 'Técnica e cuidado para devolver harmonia, identidade e confiança ao olhar.',
   },

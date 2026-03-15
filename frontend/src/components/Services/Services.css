@@ -21,17 +21,41 @@
 
 /* ── Card ─────────────────────────────────────────────────────── */
 .service-card {
+  --service-card-border: rgba(184, 150, 97, 0.45);
+  --service-card-border-hover: rgba(184, 150, 97, 0.75);
   background: var(--color-white);
+  border: 2px solid var(--service-card-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition), border-color var(--transition);
 }
 
 .service-card:hover {
+  border-color: var(--service-card-border-hover);
   box-shadow: var(--shadow-xl);
+}
+
+.service-card--design-sobrancelhas {
+  --service-card-border: rgba(197, 153, 94, 0.5);
+  --service-card-border-hover: rgba(197, 153, 94, 0.82);
+}
+
+.service-card--metodo-revitalize {
+  --service-card-border: rgba(167, 121, 68, 0.52);
+  --service-card-border-hover: rgba(167, 121, 68, 0.84);
+}
+
+.service-card--micropigmentacao-sobrancelha {
+  --service-card-border: rgba(154, 118, 95, 0.52);
+  --service-card-border-hover: rgba(154, 118, 95, 0.82);
+}
+
+.service-card--micropigmentacao-barba {
+  --service-card-border: rgba(129, 95, 72, 0.55);
+  --service-card-border-hover: rgba(129, 95, 72, 0.85);
 }
 
 /* ── Imagem ───────────────────────────────────────────────────── */
