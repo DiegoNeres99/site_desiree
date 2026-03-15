@@ -6,7 +6,7 @@ import './Footer.css'
 
 const navLinks = [
   { label: 'Início', href: '#inicio' },
-  { label: 'Sobre Mim', href: '#sobre' },
+  { label: 'Quem sou eu', href: '#quem-sou-eu' },
   { label: 'Serviços', href: '#servicos' },
   { label: 'Galeria', href: '#galeria' },
   { label: 'Avaliações', href: '#avaliacoes' },

@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { Routes, Route } from 'react-router-dom'
 import Navbar       from './components/Navbar/Navbar'
 import Hero         from './components/Hero/Hero'
-import About        from './components/About/About'
+import WhoIAm       from './components/WhoIAm/WhoIAm'
 import Services     from './components/Services/Services'
 import Gallery      from './components/Gallery/Gallery'
 import Testimonials from './components/Testimonials/Testimonials'
@@ -23,7 +23,7 @@ function HomePage() {
 
       <main>
         <Hero />
-        <About />
+        <WhoIAm />
         <Services />
         <Gallery />
         <Testimonials />

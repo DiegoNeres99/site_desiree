@@ -7,7 +7,7 @@ import './Navbar.css'
 
 const navLinks = [
   { label: 'Início', href: '#inicio' },
-  { label: 'Sobre', href: '#sobre' },
+  { label: 'Quem sou eu', href: '#quem-sou-eu' },
   { label: 'Serviços', href: '#servicos' },
   { label: 'Galeria', href: '#galeria' },
   { label: 'Avaliações', href: '#avaliacoes' },

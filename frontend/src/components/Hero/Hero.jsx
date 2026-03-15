@@ -15,8 +15,8 @@ const itemVariants = {
 }
 
 export default function Hero() {
-  const scrollToAbout = () => {
-    document.getElementById('sobre')?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToWhoIAm = () => {
+    document.getElementById('quem-sou-eu')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -94,7 +94,7 @@ export default function Hero() {
         {/* Scroll indicator */}
         <motion.button
           className="hero__scroll"
-          onClick={scrollToAbout}
+          onClick={scrollToWhoIAm}
           aria-label="Rolar para baixo"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
