@@ -48,6 +48,10 @@
   transition: transform var(--transition-slow);
 }
 
+.service-card__image--revitalize {
+  object-position: center 24%;
+}
+
 .service-card:hover .service-card__image {
   transform: scale(1.06);
 }

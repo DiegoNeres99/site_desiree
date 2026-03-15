@@ -72,7 +72,7 @@ export default function Services() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="service-card__image"
+                    className={`service-card__image ${service.slug === 'metodo-revitalize' ? 'service-card__image--revitalize' : ''}`}
                     loading="lazy"
                   />
                   <div className="service-card__overlay" />

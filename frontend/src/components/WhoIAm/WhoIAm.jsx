@@ -24,27 +24,27 @@ const differentialIcons = [FiAward, FiUsers, FiStar, FiHeart]
 const galleryCards = [
   {
     id: 'metodo',
-    image: '/gallery-my/WhatsApp Image 2026-03-14 at 18.49.35.jpg',
-    title: 'Criadora do Método Revitalize',
+    image: '/gallery-my/revitalize-pen-focus.jpg',
+    title: 'Criadora do Método RevitalizeBrow',
     text: 'Protocolo que trata, regenera e reconstrói sobrancelhas com foco em naturalidade.',
   },
   {
     id: 'proposito',
-    image: '/gallery-my/WhatsApp Image 2026-03-14 at 18.49.35 (1).jpg',
-    title: 'Propósito com acolhimento',
-    text: 'Mãe do Vitor e cristã, com atendimento humano e atencioso em cada detalhe.',
+    image: '/gallery-my/revitalize-pigment-focus.jpg',
+    title: 'Pigmento certo, resultado natural',
+    text: 'Escolha estratégica de pigmentos para respeitar pele, tom e harmonia facial.',
   },
   {
     id: 'reconstrucao',
-    image: '/gallery-my/WhatsApp Image 2026-03-14 at 19.21.16.jpg',
+    image: '/gallery-my/revitalize-pigment-hands.jpg',
     title: 'Reconstrução estratégica',
     text: 'Técnica e cuidado para devolver harmonia, identidade e confiança ao olhar.',
   },
   {
     id: 'preenchimento',
-    image: '/gallery-my/WhatsApp Image 2026-03-14 at 19.21.17 (1).jpg',
-    title: 'Barba e cabelo',
-    text: 'Preenchimento masculino para mais definição, naturalidade e segurança.',
+    image: '/gallery-my/WhatsApp Image 2026-03-14 at 19.21.17.jpg',
+    title: 'Presença e autoridade',
+    text: 'Atendimento profissional, acolhedor e com padrão técnico em cada etapa.',
   },
 ]
 
@@ -63,7 +63,7 @@ export default function WhoIAm() {
         >
           <div className="who__intro-image-wrap">
             <img
-              src="/gallery-my/WhatsApp Image 2026-03-14 at 19.21.17.jpg"
+              src="/gallery-my/revitalize-portrait.jpg"
               alt="Desirée Honório"
               className="who__intro-image"
               loading="lazy"
@@ -76,7 +76,7 @@ export default function WhoIAm() {
             <div className="divider" />
 
             <p className="who__text">
-              Desirée é especialista em sobrancelhas e criadora do Método Revitalize, um protocolo
+              Desirée é especialista em sobrancelhas e criadora do Método RevitalizeBrow, um protocolo
               desenvolvido para tratar, regenerar e reconstruir sobrancelhas que sofreram com
               pigmentações antigas ou procedimentos anteriores.
             </p>
@@ -91,7 +91,7 @@ export default function WhoIAm() {
               mas também a forma como se sentiam ao se olhar no espelho.
             </p>
             <p className="who__text">
-              Foi a partir dessa realidade que nasceu o Método Revitalize, unindo técnica, cuidado com
+              Foi a partir dessa realidade que nasceu o Método RevitalizeBrow, unindo técnica, cuidado com
               a pele e reconstrução estratégica das sobrancelhas para devolver naturalidade, harmonia
               e segurança ao olhar.
             </p>

@@ -30,23 +30,22 @@ export const services = [
   },
   {
     id: 2,
-    slug: "remocao-tatuagem-laser",
-    icon: "laser",
-    title: "Remoção de Tatuagem a Laser",
+    slug: "metodo-revitalize",
+    icon: "eyebrow",
+    title: "Método RevitalizeBrow",
     shortDescription:
-      "Tecnologia de ponta para remoção segura, progressiva e eficaz de tatuagens de qualquer tamanho.",
+      "Remoção + reparo tecidual + reconstrução de pelos em um protocolo 2 em 1 para sobrancelhas mais naturais.",
     description:
-      "Utilize a tecnologia Q-Switched para fragmentar os pigmentos da tatuagem de forma segura. O laser atinge as partículas de tinta sem agredir os tecidos ao redor. O número de sessões varia conforme o tamanho, cor e profundidade da tatuagem.",
-    duration: "Conforme o tamanho",
-    price: "Consulte valores",
+      "O Método Revitalize foi desenvolvido para reconstruir e revitalizar sobrancelhas com segurança. O protocolo combina diagnóstico personalizado, remoção segura de pigmentos antigos, reparo tecidual e reconstrução estratégica para devolver harmonia facial e autoestima.",
+    duration: "Etapas personalizadas",
     image:
-      "/gallery-servicos/remoção-tatuagem.jpg",
-    category: "laser",
+      "/gallery-my/revitalize-portrait.jpg",
+    category: "sobrancelha",
     features: [
-      "Tecnologia Q-Switched",
-      "Avaliação prévia gratuita",
-      "Pigmentos coloridos e preto",
-      "Acompanhamento pós-procedimento",
+      "Diagnóstico personalizado",
+      "Remoção segura de pigmentação antiga",
+      "Reparo tecidual e regeneração da pele",
+      "Reconstrução estratégica e natural",
     ],
   },
   {
@@ -281,7 +280,7 @@ export const differentials = [
 export const serviceOptions = [
   { value: "", label: "Selecione um serviço" },
   { value: "design-sobrancelhas", label: "Design de Sobrancelhas" },
-  { value: "remocao-laser", label: "Remoção de Tatuagem a Laser" },
+  { value: "metodo-revitalize", label: "Método RevitalizeBrow" },
   {
     value: "micropigmentacao-sobrancelha",
     label: "Micropigmentação de Sobrancelha",

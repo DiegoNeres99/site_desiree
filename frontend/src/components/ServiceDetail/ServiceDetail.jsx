@@ -37,6 +37,78 @@ const nanoSections = [
   },
 ]
 
+const revitalizeSteps = [
+  {
+    tag: 'Etapa 1',
+    title: 'Diagnóstico personalizado',
+    text: 'Cada sobrancelha possui uma história. A análise considera formato do rosto, assimetrias, pigmentações antigas, saúde da pele e crescimento dos fios para criar um plano de recuperação individual.',
+  },
+  {
+    tag: 'Etapa 2',
+    title: 'Remoção segura de pigmentação antiga',
+    text: 'Quando necessário, a remoção a laser ajuda a clarear ou eliminar pigmentos indesejados, corrigir formatos antigos e preparar a pele para uma nova reconstrução.',
+  },
+  {
+    tag: 'Etapa 3',
+    title: 'Reparo tecidual e regeneração da pele',
+    text: 'Peles sensibilizadas por procedimentos anteriores recebem uma abordagem de reparo tecidual para apoiar a regeneração, suavizar marcas e preparar a região para reconstrução saudável.',
+  },
+  {
+    tag: 'Etapa 4',
+    title: 'Reconstrução estratégica da sobrancelha',
+    text: 'Com a pele recuperada, a reconstrução respeita formato natural do rosto, direção dos fios, naturalidade e harmonia facial para recuperar sua identidade.',
+  },
+  {
+    tag: 'Etapa 5',
+    title: 'Revitalização e naturalidade',
+    text: 'A etapa final devolve leveza, naturalidade, volume visual e equilíbrio para um resultado elegante, sem aparência artificial.',
+  },
+]
+
+const revitalizeAudience = [
+  'Possuem micropigmentação antiga',
+  'Têm sobrancelhas falhadas',
+  'Sofreram danos ou cicatrizes de procedimentos antigos',
+  'Perderam o formato natural das sobrancelhas',
+  'Desejam sobrancelhas mais naturais',
+  'Querem corrigir procedimentos antigos',
+]
+
+const revitalizeGallery = [
+  {
+    image: '/gallery-my/revitalize-portrait.jpg',
+    title: 'Presença profissional',
+    tag: 'Autoridade',
+  },
+  {
+    image: '/gallery-my/revitalize-pen-focus.jpg',
+    title: 'Precisão técnica no desenho',
+    tag: 'Instrumental',
+  },
+  {
+    image: '/gallery-my/revitalize-pigment-focus.jpg',
+    title: 'Escolha estratégica de pigmentos',
+    tag: 'Pigmentação',
+  },
+  {
+    image: '/gallery-my/revitalize-pigment-hands.jpg',
+    title: 'Cuidado em cada etapa',
+    tag: 'Protocolo',
+  },
+]
+
+const revitalizeStory = [
+  'O Método Revitalize nasceu da necessidade de ajudar mulheres que carregavam marcas de procedimentos antigos nas sobrancelhas.',
+  'Ao longo da minha trajetória na área da beleza, comecei a perceber algo em comum entre muitas clientes: pigmentações antigas, tons escuros ou acinzentados, formatos que não valorizavam o rosto e, muitas vezes, peles sensibilizadas.',
+  'Mais do que um detalhe estético, isso afetava diretamente a forma como muitas mulheres se sentiam ao olhar no espelho.',
+  'Algumas já tinham tentado corrigir o problema outras vezes. Outras acreditavam que não havia mais solução.',
+  'Foi então que nasceu o desejo de desenvolver um método que fosse além de simplesmente redesenhar sobrancelhas, respeitando a saúde da pele, a história de cada sobrancelha e a naturalidade do rosto.',
+  'Assim surgiu o Método Revitalize: um protocolo que une análise personalizada, remoção segura de pigmentos antigos, reparo tecidual para regeneração da pele e reconstrução estratégica das sobrancelhas.',
+  'Cada etapa foi pensada para recuperar o que procedimentos antigos comprometeram e devolver leveza, harmonia e naturalidade ao olhar.',
+  'O Método Revitalize não nasceu apenas da técnica. Nasceu da escuta, da experiência e do compromisso em ajudar mulheres a se reconectarem com sua própria beleza.',
+  'Porque mais do que corrigir sobrancelhas, o verdadeiro objetivo sempre foi restaurar autoestima e confiança.',
+]
+
 export default function ServiceDetail() {
   const { slug } = useParams()
   const service = services.find((item) => item.slug === slug)
@@ -70,6 +142,7 @@ export default function ServiceDetail() {
 
   const whatsappMsg = `Olá, Desiree! Tenho interesse no serviço de ${service.title}.`
   const isNanoService = service.slug === 'micropigmentacao-sobrancelha'
+  const isRevitalizeService = service.slug === 'metodo-revitalize'
 
   return (
     <main className="service-detail section">
@@ -96,6 +169,11 @@ export default function ServiceDetail() {
               </p>
             )}
             <p className="service-detail__description">{service.description}</p>
+            {isRevitalizeService && (
+              <p className="service-detail__highlight">
+                Aqui não tratamos apenas sobrancelhas. Tratamos histórias, autoestima e identidade.
+              </p>
+            )}
 
             <div className="service-detail__meta">
               <span><FiClock size={14} /> {service.duration}</span>
@@ -162,6 +240,88 @@ export default function ServiceDetail() {
                   )}
                 </article>
               ))}
+            </div>
+          </section>
+        )}
+
+        {isRevitalizeService && (
+          <section className="service-protocol">
+            <header className="service-protocol__header">
+              <span className="section-label">Método RevitalizeBrow</span>
+              <h2 className="section-title">Reconstrução e revitalização de sobrancelhas</h2>
+              <p className="section-subtitle">
+                Remoção + reparo tecidual + reconstrução de pelos em um protocolo 2 em 1 para
+                recuperar naturalidade, corrigir procedimentos antigos e devolver harmonia facial.
+              </p>
+            </header>
+
+            <article className="service-protocol__story">
+              <span className="section-label">A História do Método RevitalizeBrow</span>
+              <h3>Escuta, experiência e propósito</h3>
+              <div className="service-protocol__story-text">
+                {revitalizeStory.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              <p className="service-protocol__story-signature">
+                Revitalize: corrigindo o passado, reconstruindo sua beleza natural.
+              </p>
+            </article>
+
+            <div className="service-protocol__photos">
+              {revitalizeGallery.map((photo) => (
+                <article key={photo.image} className="service-protocol__photo-card">
+                  <button
+                    type="button"
+                    className="service-protocol__photo-btn"
+                    onClick={() => setLightbox({ image: photo.image, title: photo.title, tag: photo.tag })}
+                    aria-label={`Abrir imagem: ${photo.title}`}
+                  >
+                    <img src={photo.image} alt={photo.title} loading="lazy" />
+                  </button>
+                  <div className="service-protocol__photo-info">
+                    <span>{photo.tag}</span>
+                    <p>{photo.title}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="service-protocol__grid">
+              {revitalizeSteps.map((step) => (
+                <article key={step.title} className="service-protocol__card">
+                  <span className="section-label">{step.tag}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="service-protocol__extra">
+              <article className="service-protocol__panel">
+                <h3>Para quem é o método</h3>
+                <ul className="service-protocol__list">
+                  {revitalizeAudience.map((item) => (
+                    <li key={item}>
+                      <FiCheckCircle size={15} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <article className="service-protocol__panel">
+                <h3>Nosso propósito</h3>
+                <p>
+                  O Método RevitalizeBrow foi criado para ajudar mulheres a se reconectarem com sua
+                  beleza natural e voltarem a se sentir seguras ao olhar no espelho.
+                </p>
+                <ul className="service-protocol__principles">
+                  <li>Beleza com naturalidade</li>
+                  <li>Técnica com propósito</li>
+                  <li>Resultados que respeitam sua identidade</li>
+                </ul>
+              </article>
             </div>
           </section>
         )}

@@ -15,7 +15,7 @@ const navLinks = [
 
 const serviceLinks = [
   'Design de Sobrancelhas',
-  'Remoção de Tatuagem a Laser',
+  'Método RevitalizeBrow',
   'Micropigmentação de Sobrancelha',
   'Micropigmentação de Barba',
 ]
