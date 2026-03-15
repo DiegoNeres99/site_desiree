@@ -53,18 +53,17 @@ export const services = [
     id: 3,
     slug: "micropigmentacao-sobrancelha",
     icon: "micropigmentation",
-    title: "Micropigmentação de Sobrancelha",
+    title: "Nanopigmentação de Sobrancelhas",
     shortDescription:
-      "Técnica fio a fio (hairstrokes) para sobrancelhas com aspecto 100% natural e duradouro.",
+      "Técnica de nanofios hiper-realistas com design estratégico e individual para cada cliente.",
     description:
-      "A micropigmentação por técnica fio a fio imita os fios naturais de sobrancelha, criando um resultado extremamente realista e duradouro. Ideal para quem tem falhas, sobrancelhas ralas ou deseja praticidade no dia a dia sem abrir mão de um visual impecável.",
-    duration: "2h – 2h30",
-    price: "A partir de R$ 350",
+      "A nanopigmentação é uma técnica que preenche os fios de forma fina e hiper-realista, com design estratégico e individual para cada cliente, trazendo naturalidade ao olhar.",
+    duration: "2h – 2h30",    
     image:
-      "/gallery-servicos/micropigmentacao-sobrancelha.jpg",
+      "/nanopigmentacao/eu.jpg",
     category: "sobrancelha",
     features: [
-      "Técnica fio a fio (hairstrokes)",
+      "Técnica nanofios hiper-realistas",
       "Pigmentos hipoalergênicos",
       "Retoque incluído em 21 dias",
       "Durabilidade de 1 a 3 anos",

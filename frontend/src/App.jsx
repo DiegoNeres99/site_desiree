@@ -1,6 +1,7 @@
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 import { motion as Motion } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
+import { Routes, Route } from 'react-router-dom'
 import Navbar       from './components/Navbar/Navbar'
 import Hero         from './components/Hero/Hero'
 import About        from './components/About/About'
@@ -9,10 +10,50 @@ import Gallery      from './components/Gallery/Gallery'
 import Testimonials from './components/Testimonials/Testimonials'
 import Contact      from './components/Contact/Contact'
 import Footer       from './components/Footer/Footer'
+import ServiceDetail from './components/ServiceDetail/ServiceDetail'
 import { siteConfig, getWhatsAppLink } from './config/site'
+import useScrollToHash from './hooks/useScrollToHash'
+import useScrollToTop from './hooks/useScrollToTop'
 import './styles/globals.css'
 
+function HomePage() {
+  return (
+    <>
+      <Navbar />
+
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Gallery />
+        <Testimonials />
+        <Contact />
+      </main>
+
+      <Footer />
+
+      {/* ── WhatsApp Flutuante ───────────────────────────────────── */}
+      <Motion.a
+        href={getWhatsAppLink()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-float"
+        aria-label="Falar no WhatsApp"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 2, type: 'spring', stiffness: 200, damping: 15 }}
+        whileHover={{ scale: 1.12 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <FaWhatsapp size={26} />
+      </Motion.a>
+    </>
+  )
+}
+
 export default function App() {
+  useScrollToHash()
+  useScrollToTop()
   const sameAs = [
     siteConfig.social.instagram,
     siteConfig.social.facebook,
@@ -65,35 +106,10 @@ export default function App() {
         })}</script>
       </Helmet>
 
-      {/* ── Layout ──────────────────────────────────────────────── */}
-      <Navbar />
-
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Gallery />
-        <Testimonials />
-        <Contact />
-      </main>
-
-      <Footer />
-
-      {/* ── WhatsApp Flutuante ───────────────────────────────────── */}
-      <Motion.a
-        href={getWhatsAppLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-float"
-        aria-label="Falar no WhatsApp"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 2, type: 'spring', stiffness: 200, damping: 15 }}
-        whileHover={{ scale: 1.12 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <FaWhatsapp size={26} />
-      </Motion.a>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/servicos/:slug" element={<ServiceDetail />} />
+      </Routes>
     </HelmetProvider>
   )
 }

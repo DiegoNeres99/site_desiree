@@ -25,7 +25,7 @@ export default function Hero() {
       {/* TODO: Substituir por foto profissional da Desiree */}
       <div className="hero__bg">
         <img
-          src="gallery-my/eu.jpg"
+          src="nanopigmentacao/eu.jpg"
           alt="Estética e beleza — Desiree Honório"
           className="hero__bg-img"
           loading="eager"

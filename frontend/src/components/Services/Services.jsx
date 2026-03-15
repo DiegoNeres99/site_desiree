@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { FiArrowRight, FiClock, FiDollarSign } from 'react-icons/fi'
 import { GiEyelashes, GiLaserburn, GiBeard } from 'react-icons/gi'
 import { RiScissorsLine } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
 import { services } from '../../data/content'
 import { getWhatsAppLink } from '../../config/site'
 import './Services.css'
@@ -57,7 +58,6 @@ export default function Services() {
         >
           {services.map((service) => {
             const Icon = serviceIcons[service.icon] || GiEyelashes
-            const whatsappMsg = `Olá, Desiree! Tenho interesse no serviço de ${service.title}.`
 
             return (
               <motion.article
@@ -93,10 +93,12 @@ export default function Services() {
                       <FiClock size={13} />
                       {service.duration}
                     </span>
-                    <span className="service-card__meta-item">
-                      <FiDollarSign size={13} />
-                      {service.price}
-                    </span>
+                    {service.price && (
+                      <span className="service-card__meta-item">
+                        <FiDollarSign size={13} />
+                        {service.price}
+                      </span>
+                    )}
                   </div>
 
                   {/* Features */}
@@ -110,15 +112,13 @@ export default function Services() {
                   </ul>
 
                   {/* CTA */}
-                  <a
-                    href={getWhatsAppLink(whatsappMsg)}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to={`/servicos/${service.slug}`}
                     className="service-card__cta"
                   >
                     Saiba mais
                     <FiArrowRight size={15} />
-                  </a>
+                  </Link>
                 </div>
               </motion.article>
             )
