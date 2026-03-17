@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 import { motion as Motion } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
@@ -10,11 +11,12 @@ import Gallery      from './components/Gallery/Gallery'
 import Testimonials from './components/Testimonials/Testimonials'
 import Contact      from './components/Contact/Contact'
 import Footer       from './components/Footer/Footer'
-import ServiceDetail from './components/ServiceDetail/ServiceDetail'
 import { siteConfig, getWhatsAppLink } from './config/site'
 import useScrollToHash from './hooks/useScrollToHash'
 import useScrollToTop from './hooks/useScrollToTop'
 import './styles/globals.css'
+
+const ServiceDetail = lazy(() => import('./components/ServiceDetail/ServiceDetail'))
 
 function HomePage() {
   return (
@@ -108,7 +110,14 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/servicos/:slug" element={<ServiceDetail />} />
+        <Route
+          path="/servicos/:slug"
+          element={
+            <Suspense fallback={<div className="page-loading">Carregando...</div>}>
+              <ServiceDetail />
+            </Suspense>
+          }
+        />
       </Routes>
     </HelmetProvider>
   )

@@ -279,6 +279,5 @@ export const serviceOptions = [
 export const galleryCategories = [
   { value: "all", label: "Todos" },
   { value: "sobrancelha", label: "Sobrancelha" },
-  { value: "laser", label: "Laser" },
   { value: "barba", label: "Barba" },
 ];

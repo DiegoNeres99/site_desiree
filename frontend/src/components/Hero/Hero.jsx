@@ -22,11 +22,10 @@ export default function Hero() {
   return (
     <section id="inicio" className="hero">
       {/* Imagem de fundo */}
-      {/* TODO: Substituir por foto profissional da Desiree */}
       <div className="hero__bg">
         <img
           src="gallery-my/eu2.jpg"
-          alt="Estética e beleza — Desiree Honório"
+          alt="Desirée Honório — Especialista em sobrancelhas e micropigmentação em Arapongas"
           className="hero__bg-img"
           loading="eager"
         />
@@ -57,7 +56,7 @@ export default function Hero() {
 
           {/* Subtexto */}
           <motion.p variants={itemVariants} className="hero__subtitle">
-            Design de sobrancelhas · Micropigmentação · Remoção de tatuagem a laser
+            Design de sobrancelhas · Micropigmentação · Método RevitalizeBrow
           </motion.p>
 
           {/* CTAs */}

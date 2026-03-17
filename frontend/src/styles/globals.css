@@ -322,3 +322,16 @@ input, textarea, select {
     --section-padding: 48px;
   }
 }
+
+/* ─── Page Loading (Suspense fallback) ──────────────────────── */
+.page-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

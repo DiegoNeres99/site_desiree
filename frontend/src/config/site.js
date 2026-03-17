@@ -9,7 +9,7 @@ export const siteConfig = {
   name: "Desiree Honório",
   tagline: "Realça o que há de mais bonito em você",
   description:
-    "Especialista em design de sobrancelhas, remoção de tatuagem a laser e micropigmentação. Beleza natural com técnica e cuidado.",
+    "Especialista em design de sobrancelhas, micropigmentação e Método RevitalizeBrow em Arapongas - PR. Beleza natural com técnica e cuidado.",
 
   // ─── Contato ─────────────────────────────────────────────────────────────────
   // TODO: Substituir pelo número real de WhatsApp no formato: 5511999999999
@@ -52,9 +52,9 @@ export const siteConfig = {
   seo: {
     title: "Desiree Honório | Estética em Arapongas",
     description:
-      "Especialista em design de sobrancelhas, remoção de tatuagem a laser e micropigmentação em Arapongas - PR. Agende seu horário!",
+      "Especialista em design de sobrancelhas, micropigmentação e Método RevitalizeBrow em Arapongas - PR. Agende seu horário!",
     keywords:
-      "design de sobrancelhas em Arapongas, micropigmentação em Arapongas, remoção de tatuagem a laser Arapongas, estética Arapongas PR, Desiree Honório",
+      "design de sobrancelhas em Arapongas, micropigmentação em Arapongas, método revitalize sobrancelhas, nanopigmentação Arapongas PR, estética Arapongas PR, Desiree Honório",
     // TODO: Substituir pela URL real do site após o deploy
     siteUrl: "https://www.desireehonorio.com.br",
     // TODO: Adicionar imagem OG real (1200x630px) na pasta public/

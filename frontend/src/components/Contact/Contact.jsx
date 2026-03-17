@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useForm } from 'react-hook-form'
+import emailjs from '@emailjs/browser'
 import {
   FiMapPin, FiPhone, FiMail, FiClock,
   FiInstagram, FiFacebook, FiSend,
@@ -9,6 +10,12 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { siteConfig, getWhatsAppLink } from '../../config/site'
 import { serviceOptions } from '../../data/content'
 import './Contact.css'
+
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const emailJsConfigured   = EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY
+  && !EMAILJS_SERVICE_ID.includes('xxxxxxx')
 
 export default function Contact() {
   const sectionRef = useRef(null)
@@ -43,6 +50,27 @@ export default function Contact() {
   }
 
   const onSubmit = async (data) => {
+    // Envia e-mail via EmailJS (se configurado no .env)
+    if (emailJsConfigured) {
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            from_name:    data.name,
+            from_email:   data.email,
+            phone:        data.phone || 'Não informado',
+            service:      getServiceLabel(data.service),
+            message:      data.message,
+            to_name:      'Desiree',
+          },
+          EMAILJS_PUBLIC_KEY,
+        )
+      } catch {
+        // Falha silenciosa — o WhatsApp ainda abre normalmente
+      }
+    }
+
     window.open(buildWhatsAppMsg(data), '_blank', 'noopener,noreferrer')
     reset()
   }
