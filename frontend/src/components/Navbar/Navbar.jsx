@@ -4,6 +4,7 @@ import { FiMenu, FiX, FiInstagram } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import { siteConfig, getWhatsAppLink } from '../../config/site'
 import BrandLogo from '../BrandLogo/BrandLogo'
+import scrollToSection from '../../utils/scrollToSection'
 import './Navbar.css'
 
 const navLinks = [
@@ -20,35 +21,69 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('inicio')
 
-  // Detecta scroll para adicionar blur/sombra na navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
 
-      // Detecta seção ativa pelo scroll
-      const sections = navLinks.map(l => l.href.replace('#', ''))
+      const sections = navLinks.map((l) => l.href.replace('#', ''))
+      const navHeight = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue('--navbar-height'),
+        10,
+      ) || 70
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
         if (el) {
           const rect = el.getBoundingClientRect()
-          if (rect.top <= 100) {
+          if (rect.top <= navHeight + 24) {
             setActiveSection(sections[i])
             break
           }
         }
       }
     }
+
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleNavClick = (href) => {
-    setMenuOpen(false)
-    const id = href.replace('#', '')
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' })
+  useEffect(() => {
+    if (!menuOpen) return undefined
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+      }
     }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 900 && menuOpen) {
+        setMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [menuOpen])
+
+  const handleNavClick = (href) => {
+    const id = href.replace('#', '')
+    setActiveSection(id)
+    setMenuOpen(false)
+    scrollToSection(id)
   }
 
   return (
@@ -60,16 +95,17 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         <div className="navbar__container container">
-          {/* Logo */}
           <a
             href="#inicio"
             className="navbar__logo"
-            onClick={(e) => { e.preventDefault(); handleNavClick('#inicio') }}
+            onClick={(e) => {
+              e.preventDefault()
+              handleNavClick('#inicio')
+            }}
           >
             <BrandLogo compact />
           </a>
 
-          {/* Links Desktop */}
           <nav className="navbar__nav" aria-label="Navegação principal">
             <ul className="navbar__links">
               {navLinks.map((link) => (
@@ -77,7 +113,10 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     className={`navbar__link ${activeSection === link.href.replace('#', '') ? 'navbar__link--active' : ''}`}
-                    onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      handleNavClick(link.href)
+                    }}
                   >
                     {link.label}
                   </a>
@@ -86,7 +125,6 @@ export default function Navbar() {
             </ul>
           </nav>
 
-          {/* CTA + Social Desktop */}
           <div className="navbar__actions">
             <a
               href={siteConfig.social.instagram}
@@ -109,7 +147,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Hamburguer Mobile */}
           <button
             className="navbar__hamburger"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -121,7 +158,6 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {/* Menu Mobile */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -142,7 +178,10 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     className={`navbar__mobile-link ${activeSection === link.href.replace('#', '') ? 'navbar__mobile-link--active' : ''}`}
-                    onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      handleNavClick(link.href)
+                    }}
                   >
                     {link.label}
                   </a>
@@ -162,7 +201,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Overlay Mobile */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div

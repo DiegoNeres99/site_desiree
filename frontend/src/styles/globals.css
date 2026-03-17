@@ -60,6 +60,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+section[id] {
+  scroll-margin-top: calc(var(--navbar-height) + 12px);
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-off-white);
@@ -313,13 +317,25 @@ input, textarea, select {
 /* ─── Responsividade básica ─────────────────────────────────── */
 @media (max-width: 768px) {
   :root {
+    --navbar-height: 64px;
     --section-padding: 60px;
+    --container-px: clamp(16px, 6vw, 28px);
+  }
+
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   :root {
+    --navbar-height: 60px;
     --section-padding: 48px;
+    --container-px: 16px;
   }
 }
 
