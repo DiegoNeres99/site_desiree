@@ -95,16 +95,12 @@ export default function Testimonials() {
                     <p className="testimonial-card__text">"{t.text}"</p>
                     <StarRating rating={t.rating} />
                     <div className="testimonial-card__author">
-                      <img
-                        src={t.avatar}
-                        alt={t.name}
-                        className="testimonial-card__avatar"
-                        loading="lazy"
-                      />
-                      <div>
+                      <div className="testimonial-card__author-info">
                         <span className="testimonial-card__name">{t.name}</span>
-                        <span className="testimonial-card__service">{t.service}</span>
-                        <span className="testimonial-card__date">{t.date}</span>
+                        <div className="testimonial-card__meta">
+                          <span className="testimonial-card__service">{t.service}</span>
+                          <span className="testimonial-card__date">{t.date}</span>
+                        </div>
                       </div>
                     </div>
                   </motion.article>

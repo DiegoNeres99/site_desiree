@@ -33,9 +33,9 @@ export const services = [
     icon: "eyebrow",
     title: "Método RevitalizeBrow",
     shortDescription:
-      "Remoção + reparo tecidual + reconstrução de pelos em um protocolo 3 em 1 para sobrancelhas mais naturais.",
+      "Remoção + reparo tecidual + reconstrução de pelos em um protocolo 3 em 1, reconhecido como um dos procedimentos mais procurados do estúdio.",
     description:
-      "O Método Revitalize foi desenvolvido para reconstruir e revitalizar sobrancelhas com segurança. O protocolo combina diagnóstico personalizado, remoção segura de pigmentos antigos, reparo tecidual e reconstrução estratégica para devolver harmonia facial e autoestima.",
+      "O Método Revitalize foi desenvolvido para reconstruir e revitalizar sobrancelhas com segurança. Considerado um dos tratamentos de maior destaque no estúdio, o protocolo combina diagnóstico personalizado, remoção segura de pigmentos antigos, reparo tecidual e reconstrução estratégica para devolver harmonia facial e autoestima.",
     duration: "Etapas personalizadas",
     image:
       "/gallery-my/revitalize.jpg",
@@ -94,62 +94,50 @@ export const testimonials = [
   {
     id: 1,
     name: "Maria Silva",
-    avatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80",
     rating: 5,
     service: "Micropigmentação de Sobrancelha",
-    text: "A Desiree transformou completamente minhas sobrancelhas! O resultado ficou incrível, super natural. Ela tem uma mão leve e muito talento. Recomendo de olhos fechados!",
-    date: "Janeiro 2026",
+    text: "Buscava um resultado natural e discreto, e fui atendida com excelente técnica e cuidado. O procedimento foi conduzido com calma, e o formato das sobrancelhas valorizou meu rosto sem exageros.",
+    date: "Março 2026",
   },
   {
     id: 2,
-    name: "João Pereira",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-    rating: 5,
-    service: "Remoção de Tatuagem a Laser",
-    text: "Fiz a remoção do laser e o resultado superou todas as minhas expectativas. Profissional extremamente qualificada, me deixou bem informado sobre todo o processo. Estou muito satisfeito!",
-    date: "Dezembro 2025",
-  },
-  {
-    id: 3,
     name: "Ana Carvalho",
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
     rating: 5,
     service: "Design de Sobrancelhas",
-    text: "Micropigmentação perfeita! Meu rosto mudou completamente para melhor. A Desiree tem muito cuidado e capricho em cada detalhe. Vale cada centavo!",
-    date: "Novembro 2025",
-  },
-  {
-    id: 4,
-    name: "Fernanda Lima",
-    avatar:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
-    rating: 5,
-    service: "Micropigmentação de Sobrancelha",
-    text: "Sempre tive vergonha das minhas sobrancelhas ralas, mas após a micropigmentação com a Desiree eu me sinto muito mais confiante. Resultado lindo e duradouro!",
-    date: "Outubro 2025",
-  },
-  {
-    id: 5,
-    name: "Carlos Mendes",
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
-    rating: 5,
-    service: "Micropigmentação de Barba",
-    text: "Nunca pensei que micropigmentação de barba me deixaria tão diferente! A Desiree explicou tudo com paciência e o resultado ficou extremamente natural. Super recomendo!",
+    text: "Atendimento pontual, ambiente acolhedor e execução impecável. O design respeitou minhas características e trouxe um acabamento elegante, exatamente como eu esperava.",
     date: "Setembro 2025",
   },
   {
-    id: 6,
+    id: 3,
+    name: "Fernanda Lima",
+    rating: 5,
+    service: "Micropigmentação de Sobrancelha",
+    text: "Sempre tive insegurança com falhas nas sobrancelhas, e o resultado me trouxe mais confiança no dia a dia. O trabalho foi feito com sensibilidade e excelente padrão técnico.",
+    date: "Abril 2024",
+  },
+  {
+    id: 4,
+    name: "Carlos Mendes",
+    rating: 5,
+    service: "Micropigmentação de Barba",
+    text: "Fiquei positivamente surpreso com a naturalidade da micropigmentação da barba. A profissional explicou cada etapa com clareza e conduziu o processo com atenção aos detalhes.",
+    date: "Novembro 2023",
+  },
+  {
+    id: 5,
     name: "Bianca Rocha",
-    avatar:
-      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
     rating: 5,
     service: "Design de Sobrancelhas",
-    text: "Atendimento incrível do início ao fim! Ambiente muito aconchegante e a Desiree é uma profissional nota 10. Minhas sobrancelhas nunca estiveram tão bonitas. Já sou fã!",
-    date: "Agosto 2025",
+    text: "Retornei após algum tempo e a qualidade permanece excelente. O atendimento é sempre atencioso, e o resultado final mantém um aspecto harmonioso e duradouro.",
+    date: "Julho 2022",
+  },
+  {
+    id: 6,
+    name: "Patricia Gomes",
+    rating: 5,
+    service: "Método RevitalizeBrow",
+    text: "Escolhi o RevitalizeBrow após outras tentativas sem sucesso e tive uma experiência excelente. O plano foi personalizado, a condução foi extremamente profissional e o resultado ficou natural, com recuperação visível da harmonia das sobrancelhas.",
+    date: "Fevereiro 2026",
   },
 ];
 

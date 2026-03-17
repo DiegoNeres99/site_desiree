@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { FiInstagram, FiFacebook, FiMapPin, FiPhone, FiMail, FiHeart } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import { siteConfig, getWhatsAppLink } from '../../config/site'
+import BrandLogo from '../BrandLogo/BrandLogo'
 import './Footer.css'
 
 const navLinks = [
@@ -40,9 +41,7 @@ export default function Footer() {
               className="footer__logo"
               onClick={(e) => { e.preventDefault(); scrollTo('#inicio') }}
             >
-              <span className="footer__logo-first">Desiree</span>
-              <span className="footer__logo-last">Honório</span>
-              <span className="footer__logo-sub">Estética & Beleza</span>
+              <BrandLogo />
             </a>
             <p className="footer__brand-desc">
               Especialista em realçar a beleza natural com técnica, cuidado e 
@@ -139,6 +138,16 @@ export default function Footer() {
           <p className="footer__bottom-made">
             Feito com <FiHeart className="footer__heart" aria-label="amor" /> para realçar belezas únicas
           </p>
+          <a
+            href="https://www.diegoneresdev.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__credit"
+            aria-label="Desenvolvido por DN"
+          >
+            <span className="footer__credit-logo" aria-hidden="true">DN</span>
+            <span>Desenvolvido por DN</span>
+          </a>
         </div>
       </div>
     </footer>

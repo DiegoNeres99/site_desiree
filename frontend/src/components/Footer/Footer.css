@@ -24,40 +24,14 @@
 
 .footer__logo {
   display: inline-flex;
-  flex-direction: column;
-  line-height: 1;
+  align-items: center;
   cursor: pointer;
   transition: opacity var(--transition);
   width: fit-content;
 }
 
 .footer__logo:hover {
-  opacity: 0.8;
-}
-
-.footer__logo-first {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-off-white);
-  letter-spacing: 0.02em;
-}
-
-.footer__logo-last {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: var(--color-gold);
-  letter-spacing: 0.06em;
-}
-
-.footer__logo-sub {
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-top: 3px;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 .footer__brand-desc {
@@ -65,6 +39,16 @@
   line-height: 1.75;
   color: rgba(250, 247, 245, 0.6);
   max-width: 280px;
+}
+
+.footer__logo .brand-logo {
+  --logo-gold-1: #f6e7c0;
+  --logo-gold-2: #e0bf83;
+  --logo-gold-3: #b88435;
+}
+
+.footer__logo .brand-logo__sub {
+  color: rgba(240, 208, 143, 0.8);
 }
 
 /* Redes sociais */
@@ -200,6 +184,32 @@
 .footer__heart {
   color: var(--color-gold);
   font-size: 0.875rem;
+}
+
+.footer__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: rgba(250, 247, 245, 0.55);
+  transition: color var(--transition);
+}
+
+.footer__credit:hover {
+  color: var(--color-gold);
+}
+
+.footer__credit-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 169, 110, 0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 /* ── Responsividade ──────────────────────────────────────────── */

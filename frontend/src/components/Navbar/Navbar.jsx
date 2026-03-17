@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FiMenu, FiX, FiInstagram } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import { siteConfig, getWhatsAppLink } from '../../config/site'
+import BrandLogo from '../BrandLogo/BrandLogo'
 import './Navbar.css'
 
 const navLinks = [
@@ -65,9 +66,7 @@ export default function Navbar() {
             className="navbar__logo"
             onClick={(e) => { e.preventDefault(); handleNavClick('#inicio') }}
           >
-            <span className="navbar__logo-first">Desiree</span>
-            <span className="navbar__logo-last">Honório</span>
-            <span className="navbar__logo-sub">Estética & Beleza</span>
+            <BrandLogo compact />
           </a>
 
           {/* Links Desktop */}

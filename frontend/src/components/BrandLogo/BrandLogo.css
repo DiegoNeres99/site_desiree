@@ -1,0 +1,116 @@
+.brand-logo {
+  --logo-gold-1: #f5e0ad;
+  --logo-gold-2: #d2ac5a;
+  --logo-gold-3: #9f7422;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  color: transparent;
+  width: fit-content;
+}
+
+.brand-logo__mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22em;
+  font-family: var(--font-display);
+  font-size: 2.45rem;
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  padding-inline: 0.05em;
+  background: linear-gradient(130deg, var(--logo-gold-1) 0%, var(--logo-gold-2) 45%, var(--logo-gold-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 2px 10px rgba(25, 20, 8, 0.35));
+}
+
+.brand-logo__mark::before,
+.brand-logo__mark::after {
+  content: '';
+  position: absolute;
+  top: 0.05em;
+  bottom: -0.02em;
+  width: 0.045em;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f8e7bc 0%, #c79a44 100%);
+}
+
+.brand-logo__mark::before {
+  left: 0;
+}
+
+.brand-logo__mark::after {
+  right: 0;
+}
+
+.brand-logo__d,
+.brand-logo__h {
+  display: inline-block;
+}
+
+.brand-logo__h {
+  margin-left: -0.08em;
+}
+
+.brand-logo__name {
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  background: linear-gradient(130deg, var(--logo-gold-1) 0%, var(--logo-gold-2) 45%, var(--logo-gold-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-logo__sub {
+  font-family: var(--font-body);
+  font-size: 0.47rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(227, 189, 112, 0.8);
+  line-height: 1;
+  white-space: nowrap;
+  margin-top: 0.08rem;
+}
+
+.brand-logo--compact .brand-logo__mark {
+  font-size: 2.05rem;
+}
+
+.brand-logo--compact .brand-logo__name {
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+}
+
+.brand-logo--compact .brand-logo__sub {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .brand-logo__mark {
+    font-size: 2.05rem;
+  }
+
+  .brand-logo__name {
+    font-size: 0.66rem;
+    letter-spacing: 0.27em;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand-logo__mark {
+    font-size: 1.78rem;
+  }
+
+  .brand-logo__name {
+    font-size: 0.54rem;
+    letter-spacing: 0.23em;
+  }
+}
