@@ -109,6 +109,115 @@ const revitalizeStory = [
   'Porque mais do que corrigir sobrancelhas, o verdadeiro objetivo sempre foi restaurar autoestima e confiança.',
 ]
 
+const designJourney = [
+  {
+    tag: 'Etapa 1',
+    title: 'Leitura do seu rosto',
+    text: 'Avaliação de proporções faciais, simetria e estilo pessoal para definir um desenho elegante e natural.',
+  },
+  {
+    tag: 'Etapa 2',
+    title: 'Desenho e alinhamento',
+    text: 'Mapeamento estratégico para corrigir assimetrias e respeitar o caimento natural dos fios.',
+  },
+  {
+    tag: 'Etapa 3',
+    title: 'Finalização premium',
+    text: 'Modelagem, limpeza e acabamento para valorizar o olhar com leveza e sofisticação.',
+  },
+]
+
+const designComparisons = [
+  {
+    title: 'Correção de formato e simetria',
+    before: '/gallery-sobrancelha/sobrancelha2.jpg',
+    after: '/gallery-sobrancelha/sobrancelha1.jpg',
+  },
+  {
+    title: 'Realce natural do olhar',
+    before: '/gallery-sobrancelha/sobrancelha4.jpg',
+    after: '/gallery-sobrancelha/sobrancelha3.jpg',
+  },
+  {
+    title: 'Definição com acabamento leve',
+    before: '/gallery-sobrancelha/sobrancelha5.jpg',
+    after: '/gallery-sobrancelha/sobrancelha1.jpg',
+  },
+]
+
+const designFaq = [
+  {
+    question: 'Dói para fazer design de sobrancelhas?',
+    answer: 'O desconforto é mínimo e rápido. A maioria das clientes relata sensação leve durante a modelagem.',
+  },
+  {
+    question: 'Quanto tempo dura o resultado?',
+    answer: 'Em média, de 20 a 30 dias, variando conforme crescimento dos fios e rotina de cuidados.',
+  },
+  {
+    question: 'Preciso fazer manutenção?',
+    answer: 'Sim. O ideal é retornar mensalmente para manter formato, simetria e acabamento.',
+  },
+  {
+    question: 'É indicado para quem tem falhas?',
+    answer: 'Sim. O design ajuda a equilibrar o formato e disfarçar falhas de forma natural.',
+  },
+]
+
+const beardJourney = [
+  {
+    tag: 'Etapa 1',
+    title: 'Análise do rosto e da barba',
+    text: 'Avaliamos densidade, direção dos fios e proporção facial para criar uma estratégia personalizada e masculina.',
+  },
+  {
+    tag: 'Etapa 2',
+    title: 'Mapeamento de contorno',
+    text: 'Desenhamos o contorno ideal para corrigir falhas e organizar o formato da barba sem perder naturalidade.',
+  },
+  {
+    tag: 'Etapa 3',
+    title: 'Aplicação fio a fio',
+    text: 'A micropigmentação é feita em pontos estratégicos para preencher áreas ralas e entregar um acabamento uniforme.',
+  },
+]
+
+const beardComparisons = [
+  {
+    title: 'Fechamento de falhas no maxilar',
+    before: '/gallery-barba/barba1.jpg',
+    after: '/gallery-barba/barba2.jpg',
+    result: 'Mais volume visual e contorno definido.',
+  },
+  {
+    title: 'Equilíbrio de laterais',
+    before: '/gallery-barba/barba3.jpg',
+    after: '/gallery-barba/barba4.jpg',
+    result: 'Barba mais alinhada com resultado natural.',
+  },
+  {
+    title: 'Definição de desenho frontal',
+    before: '/gallery-barba/barba5.jpg',
+    after: '/gallery-barba/barba6.jpg',
+    result: 'Visual mais limpo e uniforme no dia a dia.',
+  },
+]
+
+const beardFaq = [
+  {
+    question: 'O resultado fica artificial?',
+    answer: 'Não. A técnica é aplicada para simular densidade real, mantendo acabamento discreto e natural.',
+  },
+  {
+    question: 'Quanto tempo dura a micropigmentação de barba?',
+    answer: 'Em média de 06 a 12 meses, variando conforme pele, rotina e cuidados no pós-procedimento.',
+  },
+  {
+    question: 'Quem tem falhas localizadas pode fazer?',
+    answer: 'Sim. O procedimento é indicado justamente para preencher falhas e harmonizar o contorno da barba.',
+  },
+]
+
 export default function ServiceDetail() {
   const { slug } = useParams()
   const service = services.find((item) => item.slug === slug)
@@ -141,8 +250,10 @@ export default function ServiceDetail() {
   }
 
   const whatsappMsg = `Olá, Desiree! Tenho interesse no serviço de ${service.title}.`
+  const isDesignService = service.slug === 'design-sobrancelhas'
   const isNanoService = service.slug === 'micropigmentacao-sobrancelha'
   const isRevitalizeService = service.slug === 'metodo-revitalize'
+  const isBeardService = service.slug === 'micropigmentacao-barba'
 
   return (
     <main className="service-detail section">
@@ -202,6 +313,177 @@ export default function ServiceDetail() {
             </div>
           </div>
         </article>
+
+        {isDesignService && (
+          <section className="design-showcase">
+            <header className="design-showcase__header">
+              <span className="section-label">Design exclusivo</span>
+              <h2 className="section-title">Natural, simétrico e pensado para você</h2>
+              <p className="section-subtitle">
+                Cada atendimento segue um processo técnico para realçar o olhar sem perder a sua
+                identidade. O foco é resultado elegante e duradouro no dia a dia.
+              </p>
+            </header>
+
+            <div className="design-showcase__stats">
+              <article className="design-showcase__stat">
+                <span>Atendimento</span>
+                <strong>100% personalizado</strong>
+              </article>
+              <article className="design-showcase__stat">
+                <span>Resultado</span>
+                <strong>Efeito natural imediato</strong>
+              </article>
+              <article className="design-showcase__stat">
+                <span>Foco</span>
+                <strong>Harmonia do olhar</strong>
+              </article>
+            </div>
+
+            <div className="design-showcase__grid">
+              <article className="design-showcase__card">
+                <span className="section-label">Como funciona</span>
+                <h3>Jornada do atendimento</h3>
+                <div className="design-showcase__journey">
+                  {designJourney.map((step) => (
+                    <div key={step.title} className="design-showcase__journey-step">
+                      <span>{step.tag}</span>
+                      <h4>{step.title}</h4>
+                      <p>{step.text}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="design-showcase__faq">
+                  <span className="section-label">FAQ</span>
+                  {designFaq.map((item) => (
+                    <article key={item.question} className="design-showcase__faq-item">
+                      <h4>{item.question}</h4>
+                      <p>{item.answer}</p>
+                    </article>
+                  ))}
+                </div>
+              </article>
+
+              <article className="design-showcase__card">
+                <span className="section-label">Antes e depois</span>
+                <h3>Transformações reais</h3>
+                <div className="design-showcase__comparisons">
+                  {designComparisons.map((item) => (
+                    <article key={item.title} className="design-showcase__comparison">
+                      <div className="design-showcase__comparison-images">
+                        <button
+                          type="button"
+                          onClick={() => setLightbox({ image: item.before, title: item.title, tag: 'Antes' })}
+                          className="design-showcase__comparison-btn"
+                          aria-label={`Abrir imagem de antes: ${item.title}`}
+                        >
+                          <img src={item.before} alt={`Antes - ${item.title}`} loading="lazy" />
+                          <span>Antes</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setLightbox({ image: item.after, title: item.title, tag: 'Depois' })}
+                          className="design-showcase__comparison-btn"
+                          aria-label={`Abrir imagem de depois: ${item.title}`}
+                        >
+                          <img src={item.after} alt={`Depois - ${item.title}`} loading="lazy" />
+                          <span>Depois</span>
+                        </button>
+                      </div>
+                      <p>{item.title}</p>
+                    </article>
+                  ))}
+                </div>
+              </article>
+            </div>
+
+          </section>
+        )}
+
+        {isBeardService && (
+          <section className="beard-showcase">
+            <header className="beard-showcase__header">
+              <span className="section-label">Design masculino</span>
+              <h2 className="section-title">Contorno preciso e efeito natural</h2>
+              <p className="section-subtitle">
+                Um protocolo pensado para homens que desejam preencher falhas e definir a barba
+                com naturalidade, sem marcacao exagerada.
+              </p>
+            </header>
+
+            <div className="beard-showcase__stats">
+              <article className="beard-showcase__stat">
+                <span>Tecnica</span>
+                <strong>Aplicacao fio a fio</strong>
+              </article>
+              <article className="beard-showcase__stat">
+                <span>Foco</span>
+                <strong>Preencher falhas reais</strong>
+              </article>
+              <article className="beard-showcase__stat">
+                <span>Resultado</span>
+                <strong>Barba mais densa e uniforme</strong>
+              </article>
+            </div>
+
+            <div className="beard-showcase__grid">
+              <article className="beard-showcase__card">
+                <span className="section-label">Como funciona</span>
+                <h3>Jornada do atendimento</h3>
+                <div className="beard-showcase__journey">
+                  {beardJourney.map((step) => (
+                    <div key={step.title} className="beard-showcase__journey-step">
+                      <span>{step.tag}</span>
+                      <h4>{step.title}</h4>
+                      <p>{step.text}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="beard-showcase__faq">
+                  <span className="section-label">Dúvidas frequentes</span>
+                  {beardFaq.map((item) => (
+                    <article key={item.question} className="beard-showcase__faq-item">
+                      <h4>{item.question}</h4>
+                      <p>{item.answer}</p>
+                    </article>
+                  ))}
+                </div>
+              </article>
+
+              <article className="beard-showcase__card">
+                <span className="section-label">Confira os antes e depois</span>
+                <h3>Resultados reais</h3>
+                <div className="beard-showcase__comparisons">
+                  {beardComparisons.map((item) => (
+                    <article key={item.title} className="beard-showcase__comparison">
+                      <div className="beard-showcase__comparison-images">
+                        <button
+                          type="button"
+                          onClick={() => setLightbox({ image: item.before, title: item.title, tag: 'Antes' })}
+                          className="beard-showcase__comparison-btn"
+                          aria-label={`Abrir imagem de antes: ${item.title}`}
+                        >
+                          <img src={item.before} alt={`Antes - ${item.title}`} loading="lazy" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setLightbox({ image: item.after, title: item.title, tag: 'Depois' })}
+                          className="beard-showcase__comparison-btn"
+                          aria-label={`Abrir imagem de depois: ${item.title}`}
+                        >
+                          <img src={item.after} alt={`Depois - ${item.title}`} loading="lazy" />
+                        </button>
+                      </div>
+                      <p>{item.title}</p>
+                      <small>{item.result}</small>
+                    </article>
+                  ))}
+                </div>
+              </article>
+            </div>
+          </section>
+        )}
 
         {isNanoService && (
           <section className="nano-showcase">

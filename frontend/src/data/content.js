@@ -78,7 +78,7 @@ export const services = [
       "Técnica exclusiva masculina que preenche falhas e define o contorno da barba com resultado natural. Indicado para homens com barba rala, com áreas sem crescimento de pelos ou que desejam um visual mais definido e uniforme sem esforço diário.",
     duration: "2h – 3h",    
     image:
-      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80",
+      "/gallery-barba/logo_barba.jpg",
     category: "barba",
     features: [
       "Técnica exclusiva masculina",
