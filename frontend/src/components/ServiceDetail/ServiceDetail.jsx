@@ -196,7 +196,7 @@ const beardComparisons = [
     result: 'Barba mais alinhada com resultado natural.',
   },
   {
-    title: 'Definição de desenho frontal',
+    title: 'Definição de desenho',
     before: '/gallery-barba/barba5.jpg',
     after: '/gallery-barba/barba6.jpg',
     result: 'Visual mais limpo e uniforme no dia a dia.',

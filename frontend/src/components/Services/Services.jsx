@@ -1,18 +1,17 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { FiArrowRight, FiClock, FiDollarSign } from 'react-icons/fi'
-import { GiEyelashes, GiLaserburn, GiBeard } from 'react-icons/gi'
-import { RiScissorsLine } from 'react-icons/ri'
+import { FiArrowRight, FiClock, FiDollarSign, FiPenTool, FiRefreshCcw } from 'react-icons/fi'
+import { GiEyelashes, GiBeard } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 import { services } from '../../data/content'
 import { getWhatsAppLink } from '../../config/site'
 import './Services.css'
 
 const serviceIcons = {
-  'eyebrow':         GiEyelashes,
-  'laser':           GiLaserburn,
-  'micropigmentation': RiScissorsLine,
-  'beard':           GiBeard,
+  'eyebrow': GiEyelashes,
+  'revitalize': FiRefreshCcw,
+  'nano': FiPenTool,
+  'beard': GiBeard,
 }
 
 const staggerContainer = {
@@ -39,8 +38,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-        >
-          <span className="section-label">O Que Faço</span>
+        >          
           <h2 className="section-title">Serviços Especializados</h2>
           <div className="divider divider--center" />
           <p className="section-subtitle services__subtitle">

@@ -1,19 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { FiInstagram, FiZoomIn } from 'react-icons/fi'
+import { FiInstagram, FiZoomIn, FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import { galleryImages, galleryCategories } from '../../data/content'
 import { siteConfig } from '../../config/site'
 import './Gallery.css'
+
+const MOBILE_COLLAPSED_ITEMS = 4
 
 export default function Gallery() {
   const sectionRef = useRef(null)
   const isInView  = useInView(sectionRef, { once: true, margin: '-80px 0px' })
   const [activeCategory, setActiveCategory] = useState('all')
   const [lightbox, setLightbox] = useState(null)
+  const [isMobileExpanded, setIsMobileExpanded] = useState(false)
 
   const filtered = activeCategory === 'all'
     ? galleryImages
     : galleryImages.filter((img) => img.category === activeCategory)
+  const hasMoreThanMobilePreview = filtered.length > MOBILE_COLLAPSED_ITEMS
 
   useEffect(() => {
     if (!lightbox) return undefined
@@ -25,6 +29,10 @@ export default function Gallery() {
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [lightbox])
+
+  useEffect(() => {
+    setIsMobileExpanded(false)
+  }, [activeCategory])
 
   return (
     <section id="galeria" className="gallery section section-dark" ref={sectionRef}>
@@ -66,7 +74,8 @@ export default function Gallery() {
 
         {/* Grid */}
         <motion.div
-          className={`gallery__grid ${activeCategory === 'all' ? 'gallery__grid--all' : ''}`}
+          id="galeria-grid"
+          className={`gallery__grid ${activeCategory === 'all' ? 'gallery__grid--all' : ''} ${!isMobileExpanded ? 'gallery__grid--mobile-collapsed' : ''}`}
           layout
         >
           <AnimatePresence mode="popLayout">
@@ -98,6 +107,21 @@ export default function Gallery() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {hasMoreThanMobilePreview && (
+          <div className="gallery__mobile-toggle-wrap">
+            <button
+              type="button"
+              className="gallery__mobile-toggle"
+              onClick={() => setIsMobileExpanded((prev) => !prev)}
+              aria-expanded={isMobileExpanded}
+              aria-controls="galeria-grid"
+            >
+              {isMobileExpanded ? 'Mostrar menos' : 'Ver galeria completa'}
+              {isMobileExpanded ? <FiChevronUp size={16} /> : <FiChevronDown size={16} />}
+            </button>
+          </div>
+        )}
 
         {/* Link Instagram */}
         <motion.div

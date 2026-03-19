@@ -30,7 +30,7 @@ export const services = [
   {
     id: 2,
     slug: "metodo-revitalize",
-    icon: "eyebrow",
+    icon: "revitalize",
     title: "Método RevitalizeBrow",
     shortDescription:
       "Remoção + reparo tecidual + reconstrução de pelos em um protocolo 3 em 1, reconhecido como um dos procedimentos mais procurados do estúdio.",
@@ -50,7 +50,7 @@ export const services = [
   {
     id: 3,
     slug: "micropigmentacao-sobrancelha",
-    icon: "micropigmentation",
+    icon: "nano",
     title: "Nanopigmentação de Sobrancelhas",
     shortDescription:
       "Técnica de nanofios hiper-realistas com design estratégico e individual para cada cliente.",
