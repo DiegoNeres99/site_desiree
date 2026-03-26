@@ -175,7 +175,7 @@ export default function Hero() {
           >
             <strong>19 e 20</strong>
             <span>de Abril</span>
-            <small>Arapongas · PR</small>
+            <small>Jaguapitã · PR</small>
           </motion.div>
 
           {/* floating vagas chip */}
