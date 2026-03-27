@@ -14,17 +14,10 @@ const nanoSections = [
     images: [  
       '/nanopigmentacao/eu.jpg',
       '/nanopigmentacao/nano-6.jpg',   
-      '/nanopigmentacao/nano-3.jpg',           
+      '/nanopigmentacao/nano-3.jpg',  
+      '/nanopigmentacao/nanoooo.jpg',         
     ],
-  },
-  {
-    tag: 'Processo final',
-    title: 'Acabamento elegante e harmonioso',
-    text: 'No final, as sobrancelhas ficam mais definidas, porém leves e naturais. O resultado é pensado para valorizar o olhar sem marcar excessos.',
-    images: [
-      
-    ],
-  },
+  }, 
   {
     tag: 'Antes e depois',
     title: 'Comparativos reais de transformação',
@@ -33,6 +26,26 @@ const nanoSections = [
       '/nanopigmentacao/nano-5.jpg',
       '/nanopigmentacao/nano-8.jpg',
       '/nanopigmentacao/nano-9.jpg',
+      '/nanopigmentacao/nanooo.jpg',
+    ],
+  },
+  {
+    tag: 'Resultados reais',
+    title: 'Sobrancelhas mais cheias e naturais',
+    text: 'O resultado final é uma sobrancelha com aspecto natural, mais cheia e harmoniosa, sem perder a identidade do rosto.',
+    images: [
+      { src: '/nanopigmentacao/nano-antes.jpg', label: 'Antes' },
+      { src: '/nanopigmentacao/nano-dep.jpg', label: 'Depois' },
+      { src: '/nanopigmentacao/nano2-ant.jpg', label: 'Antes' },
+      { src: '/nanopigmentacao/nano2-dep.jpg', label: 'Depois' },
+    ],
+  },
+  {
+    tag: 'Processo final',
+    title: 'Acabamento elegante e harmonioso',
+    text: 'No final, as sobrancelhas ficam mais definidas, porém leves e naturais. O resultado é pensado para valorizar o olhar sem marcar excessos.',
+    images: [
+      
     ],
   },
 ]
@@ -521,7 +534,10 @@ export default function ServiceDetail() {
 
             <div className="nano-story">
               {nanoSections.map((section) => (
-                <article key={section.title} className="nano-story__section">
+                <article
+                  key={section.title}
+                  className={`nano-story__section${section.images.length === 0 ? ' nano-story__section--text-only' : ''}`}
+                >
                   <div className="nano-story__text">
                     <span className="section-label">{section.tag}</span>
                     <h3>{section.title}</h3>
@@ -530,18 +546,30 @@ export default function ServiceDetail() {
 
                   {section.images.length > 0 && (
                     <div className="nano-story__photos">
-                      {section.images.map((image) => (
-                        <figure key={image} className="nano-story__photo">
+                      {section.images.map((image) => {
+                        const imageSrc = typeof image === 'string' ? image : image.src
+                        const imageLabel = typeof image === 'string' ? null : image.label
+
+                        return (
+                        <figure key={imageSrc} className="nano-story__photo">
                           <button
                             type="button"
                             className="nano-story__photo-btn"
-                            onClick={() => setLightbox({ image, title: section.title, tag: section.tag })}
+                            onClick={() =>
+                              setLightbox({
+                                image: imageSrc,
+                                title: section.title,
+                                tag: imageLabel || section.tag,
+                              })
+                            }
                             aria-label={`Abrir imagem de ${section.title}`}
                           >
-                            <img src={image} alt={`${section.title} - nanopigmentação`} loading="lazy" />
+                            <img src={imageSrc} alt={`${section.title} - nanopigmentação`} loading="lazy" />
+                            {imageLabel && <span className="nano-story__photo-label">{imageLabel}</span>}
                           </button>
                         </figure>
-                      ))}
+                        )
+                      })}
                     </div>
                   )}
                 </article>

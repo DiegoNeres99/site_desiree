@@ -691,13 +691,31 @@
 
 .nano-story__section {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) 1.35fr;
-  gap: 1rem;
+  grid-template-columns: minmax(220px, 0.85fr) 1.15fr;
+  gap: 0.8rem;
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(201, 169, 110, 0.22);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  padding: 1rem;
+  padding: 0.85rem;
+}
+
+.nano-story__section--text-only {
+  grid-template-columns: 1fr;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 249, 242, 0.92));
+}
+
+.nano-story__section--text-only .nano-story__text {
+  max-width: 760px;
+}
+
+.nano-story__section--text-only .nano-story__text h3 {
+  font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+}
+
+.nano-story__section--text-only .nano-story__text p {
+  font-size: 1.05rem;
+  line-height: 1.55;
 }
 
 .nano-story__text {
@@ -706,10 +724,10 @@
 
 .nano-story__text h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-size: clamp(1.3rem, 1.9vw, 1.7rem);
   line-height: 1.15;
   color: var(--color-brown-dark);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.45rem;
 }
 
 .nano-story__text p {
@@ -718,8 +736,8 @@
 
 .nano-story__photos {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.65rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
 }
 
 .nano-story__photo {
@@ -735,12 +753,12 @@
   padding: 0;
   background: transparent;
   cursor: zoom-in;
+  position: relative;
 }
 
 .nano-story__photo img {
   width: 100%;
-  height: 100%;
-  min-height: 200px;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   transition: transform var(--transition-slow);
 }
@@ -749,8 +767,16 @@
   transform: scale(1.03);
 }
 
-.nano-story__section:nth-child(2) .nano-story__photos {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.nano-story__photo-label {
+  position: absolute;
+  left: 0.45rem;
+  bottom: 0.45rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(26, 26, 26, 0.74);
+  color: var(--color-off-white);
+  font-size: 0.72rem;
+  font-weight: 600;
 }
 
 .service-detail__lightbox {
@@ -864,9 +890,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .nano-story__photo img {
-    min-height: 170px;
-  }
 }
 
 @media (max-width: 640px) {
