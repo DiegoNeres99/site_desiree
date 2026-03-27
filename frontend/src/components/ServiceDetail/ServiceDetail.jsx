@@ -130,18 +130,18 @@ const designJourney = [
 const designComparisons = [
   {
     title: 'Correção de formato e simetria',
-    before: '/gallery-sobrancelha/sobrancelha2.jpg',
-    after: '/gallery-sobrancelha/sobrancelha1.jpg',
+    before: '/gallery-sobrancelha/sobra1.jpg',
+    after: '/gallery-sobrancelha/sobra2.jpg',
   },
   {
     title: 'Realce natural do olhar',
-    before: '/gallery-sobrancelha/sobrancelha4.jpg',
-    after: '/gallery-sobrancelha/sobrancelha3.jpg',
+    before: '/gallery-sobrancelha/sobra4.jpg',
+    after: '/gallery-sobrancelha/sobra5.jpg',
   },
   {
     title: 'Definição com acabamento leve',
-    before: '/gallery-sobrancelha/sobrancelha5.jpg',
-    after: '/gallery-sobrancelha/sobrancelha1.jpg',
+    before: '/gallery-sobrancelha/sobre6.jpg',
+    after: '/gallery-sobrancelha/sobre7.jpg',
   },
 ]
 
@@ -162,6 +162,14 @@ const designFaq = [
     question: 'É indicado para quem tem falhas?',
     answer: 'Sim. O design ajuda a equilibrar o formato e disfarçar falhas de forma natural.',
   },
+]
+
+const designAftercare = [
+  'Evite molhar a região nas primeiras 4 horas.',
+  'Não aplique óleo, pomadas ou maquiagem nas sobrancelhas no mesmo dia.',
+  'Evite esfregar a área para manter o desenho por mais tempo.',
+  'Penteie os fios diariamente para conservar o alinhamento.',
+  'Use protetor solar no rosto para preservar o acabamento.',
 ]
 
 const beardJourney = [
@@ -362,10 +370,24 @@ export default function ServiceDetail() {
                     </article>
                   ))}
                 </div>
+
+                <div className="design-showcase__aftercare">
+                  <span className="section-label">Cuidados pós-design</span>
+                  <ul className="design-showcase__aftercare-list">
+                    {designAftercare.map((item) => (
+                      <li key={item}>
+                        <FiCheckCircle size={15} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="design-showcase__aftercare-note">
+                    Manutenção recomendada: retorno em até 30 dias para manter formato e simetria.
+                  </p>
+                </div>
               </article>
 
-              <article className="design-showcase__card">
-                <span className="section-label">Antes e depois</span>
+              <article className="design-showcase__card">                
                 <h3>Transformações reais</h3>
                 <div className="design-showcase__comparisons">
                   {designComparisons.map((item) => (
@@ -378,7 +400,6 @@ export default function ServiceDetail() {
                           aria-label={`Abrir imagem de antes: ${item.title}`}
                         >
                           <img src={item.before} alt={`Antes - ${item.title}`} loading="lazy" />
-                          <span>Antes</span>
                         </button>
                         <button
                           type="button"
@@ -387,7 +408,6 @@ export default function ServiceDetail() {
                           aria-label={`Abrir imagem de depois: ${item.title}`}
                         >
                           <img src={item.after} alt={`Depois - ${item.title}`} loading="lazy" />
-                          <span>Depois</span>
                         </button>
                       </div>
                       <p>{item.title}</p>

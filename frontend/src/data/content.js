@@ -10,7 +10,7 @@ export const services = [
     id: 1,
     slug: "design-sobrancelhas",
     icon: "eyebrow",
-    title: "Design de Sobrancelhas",
+    title: "Brow lamination e Design de Sobrancelhas",
     shortDescription:
       "Modelagem personalizada para realçar e harmonizar o seu olhar conforme o formato do seu rosto.",
     description:
@@ -18,7 +18,7 @@ export const services = [
     duration: "45 min – 1h",
     
     image:
-      "/gallery-servicos/design-sobrancelhas.jpg",
+      "/gallery-servicos/sobre3.jpg",
     category: "sobrancelha",
     features: [
       "Mapeamento facial personalizado",

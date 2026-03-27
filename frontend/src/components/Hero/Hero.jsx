@@ -73,10 +73,14 @@ export default function Hero() {
             Evento Oficial&nbsp;&nbsp;•&nbsp;&nbsp;Inscrições Abertas
           </motion.div>
 
-          <motion.h1 variants={item} className="hero__title">
-            Formação de alto nível para dominar
-            <em> Lash &amp; Brow</em>
-          </motion.h1>
+          <motion.div variants={item} className="hero__title-group">
+            <span className="hero__title-desc">Formação de alto nível para dominar</span>
+            <h1 className="hero__title hero__title--event">
+              <span className="hero__title-pro">PRO</span>
+              <span className="hero__title-lash">LASH &amp; BROW</span>
+              <span className="hero__title-academy">ACADEMY</span>
+            </h1>
+          </motion.div>
 
           <motion.p variants={item} className="hero__subtitle">
             Dois dias de imersão presencial para quem quer entrar na área
@@ -117,7 +121,7 @@ export default function Hero() {
               Quero Me Inscrever
             </a>
             <a
-              href="/evento-lash-brow/formacao-pro-lash-brow.pdf"
+              href="/evento-lash-brow/Pro-Lash-&-Brow.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="hero__cta-ghost"

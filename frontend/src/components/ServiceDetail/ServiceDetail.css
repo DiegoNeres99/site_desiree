@@ -225,6 +225,38 @@
   font-size: 0.9rem;
 }
 
+.design-showcase__aftercare {
+  margin-top: 0.9rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(201, 169, 110, 0.22);
+}
+
+.design-showcase__aftercare-list {
+  margin-top: 0.55rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.design-showcase__aftercare-list li {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  color: var(--color-black-soft);
+  font-size: 0.92rem;
+}
+
+.design-showcase__aftercare-list li svg {
+  color: var(--color-gold);
+  margin-top: 0.1rem;
+  flex: 0 0 auto;
+}
+
+.design-showcase__aftercare-note {
+  margin-top: 0.6rem;
+  color: var(--color-gray-500);
+  font-size: 0.9rem;
+}
+
 .design-showcase__comparisons {
   display: grid;
   gap: 0.85rem;
