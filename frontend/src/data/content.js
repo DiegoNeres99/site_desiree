@@ -148,41 +148,41 @@ export const galleryImages = [
     category: "sobrancelha",
     label: "Sobrancelha",
     title: "Micropigmentação — Antes e Depois",
-    image: "/gallery-sobrancelha/sobrancelha1.jpg",
+    image: "/gallery-sobrancelha/anteEdep1.jpg",
   },
   {
     id: 2,
     category: "sobrancelha",
     label: "Sobrancelha",
     title: "Micropigmentação Fio a Fio — Progressão",
-    image: "/gallery-sobrancelha/sobrancelha2.jpg",
+    image: "/gallery-sobrancelha/sobran_an.jpg",
   },
   {
     id: 3,
     category: "sobrancelha",
     label: "Sobrancelha",
     title: "Sobrancelha + Cílios — Antes e Depois",
-    image: "/gallery-sobrancelha/sobrancelha3.jpg",
+    image: "/gallery-sobrancelha/sobra_antEdep.jpg",
   },
   { id: 4,
     category: "sobrancelha",
     label: "Sobrancelha",
     title: "Sobrancelha + Cílios — Antes e Depois",
-    image: "/gallery-sobrancelha/sobrancelha4.jpg",
+    image: "/gallery-sobrancelha/sobre8.jpg",
   },  
   {
     id: 5,
     category: "sobrancelha",
     label: "Sobrancelha",
     title: "Design de Sobrancelhas",
-    image: "/gallery-sobrancelha/sobrancelha5.jpg",
+    image: "/gallery-sobrancelha/sobra1.jpg",
   },
   {
     id: 6,
     category: "sobrancelha",
     label: "Sobrancelha",
     title: "Coloração de Sobrancelhas",
-    image: "/gallery-sobrancelha/sobrancelha4.jpg",
+    image: "/gallery-sobrancelha/sobra2.jpg",
   },  
   {
     id: 7,
@@ -190,7 +190,7 @@ export const galleryImages = [
     label: "Barba",
     title: "Micropigmentação de Barba",
     image:
-      "gallery-barba/barba1.jpg",
+      "/gallery-barba/barba1.jpg",
   }, 
   {
     id: 8,
@@ -198,7 +198,7 @@ export const galleryImages = [
     label: "Barba",
     title: "Definição de Barba",
     image:
-      "gallery-barba/barba2.jpg",
+      "/gallery-barba/barba2.jpg",
   },
   {
     id: 9,
@@ -206,7 +206,7 @@ export const galleryImages = [
     label: "Barba",
     title: "Definição de Barba",
     image:
-      "gallery-barba/barba3.jpg",
+      "/gallery-barba/barba3.jpg",
   },
   {
     id: 10,
@@ -214,7 +214,7 @@ export const galleryImages = [
     label: "Barba",
     title: "Definição de Barba",
     image:
-      "gallery-barba/barba4.jpg",
+      "/gallery-barba/barba4.jpg",
   },
   {
     id: 11,
@@ -222,7 +222,7 @@ export const galleryImages = [
     label: "Barba",
     title: "Definição de Barba",
     image:
-      "gallery-barba/barba5.jpg",
+      "/gallery-barba/barba5.jpg",
   },
   {
     id: 12,
@@ -230,7 +230,7 @@ export const galleryImages = [
     label: "Barba",
     title: "Definição de Barba",
     image:
-      "gallery-barba/barba6.jpg",
+      "/gallery-barba/barba6.jpg",
   },  
 ];
 

@@ -122,6 +122,39 @@ const revitalizeStory = [
   'Porque mais do que corrigir sobrancelhas, o verdadeiro objetivo sempre foi restaurar autoestima e confiança.',
 ]
 
+const revitalizeBeforeAfter = [
+  {
+    image: '/gallery-revitalize/revita.jpg',
+    title: 'Caso 1 — Antes e Depois',
+    tag: 'Antes e Depois',
+  },
+  {
+    image: '/gallery-revitalize/revita2.jpg',
+    title: 'Caso 2 — Antes e Depois',
+    tag: 'Antes e Depois',
+  },
+  {
+    image: '/gallery-revitalize/revita3.jpg',
+    title: 'Caso 3 — Antes e Depois',
+    tag: 'Antes e Depois',
+  },
+  {
+    image: '/gallery-revitalize/revita4.jpg',
+    title: 'Caso 4 — Antes e Depois',
+    tag: 'Antes e Depois',
+  },
+  {
+    image: '/gallery-revitalize/revita5.jpg',
+    title: 'Caso 5 — Antes e Depois',
+    tag: 'Antes e Depois',
+  },
+  {
+    image: '/gallery-revitalize/revita6.jpg',
+    title: 'Caso 6 — Antes e Depois',
+    tag: 'Antes e Depois',
+  },
+]
+
 const designJourney = [
   {
     tag: 'Etapa 1',
@@ -656,6 +689,29 @@ export default function ServiceDetail() {
                   <li>Resultados que respeitam sua identidade</li>
                 </ul>
               </article>
+            </div>
+
+            <div className="service-protocol__before-after">
+              <header className="service-protocol__before-after-header">
+                <span className="section-label">Resultados Reais</span>
+                <h3>Antes e depois</h3>
+                <p>Comparativos de casos atendidos no Método RevitalizeBrow.</p>
+              </header>
+
+              <div className="service-protocol__before-after-grid">
+                {revitalizeBeforeAfter.map((photo) => (
+                  <article key={photo.image} className="service-protocol__before-after-card">
+                    <button
+                      type="button"
+                      className="service-protocol__before-after-btn"
+                      onClick={() => setLightbox({ image: photo.image, title: photo.title, tag: photo.tag })}
+                      aria-label={`Abrir imagem: ${photo.title}`}
+                    >
+                      <img src={photo.image} alt={photo.title} loading="lazy" />
+                    </button>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
         )}

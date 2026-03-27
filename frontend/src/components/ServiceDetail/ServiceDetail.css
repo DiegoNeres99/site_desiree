@@ -680,6 +680,61 @@
   color: var(--color-gold);
 }
 
+.service-protocol__before-after {
+  margin-top: 1.2rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(201, 169, 110, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+}
+
+.service-protocol__before-after-header h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  color: var(--color-brown-dark);
+  margin: 0.2rem 0 0.35rem;
+}
+
+.service-protocol__before-after-header p {
+  color: var(--color-gray-500);
+}
+
+.service-protocol__before-after-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.service-protocol__before-after-card {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  box-shadow: var(--shadow-sm);
+  background: var(--color-white);
+}
+
+.service-protocol__before-after-btn {
+  width: 100%;
+  border: none;
+  padding: 0;
+  cursor: zoom-in;
+  background: transparent;
+}
+
+.service-protocol__before-after-btn img {
+  width: 100%;
+  height: clamp(170px, 17vw, 230px);
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.service-protocol__before-after-card:hover .service-protocol__before-after-btn img {
+  transform: scale(1.03);
+}
+
 .nano-showcase__header {
   margin-bottom: 1.4rem;
 }
@@ -879,6 +934,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .service-protocol__before-after-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .design-showcase__stats,
   .design-showcase__grid,
   .beard-showcase__stats,
@@ -907,6 +966,10 @@
   }
 
   .service-protocol__photos {
+    grid-template-columns: 1fr;
+  }
+
+  .service-protocol__before-after-grid {
     grid-template-columns: 1fr;
   }
 }
