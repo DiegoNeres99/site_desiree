@@ -130,18 +130,18 @@ const designJourney = [
 const designComparisons = [
   {
     title: 'Correção de formato e simetria',
-    before: '/gallery-sobrancelha/sobra1.jpg',
-    after: '/gallery-sobrancelha/sobra2.jpg',
+    before: '/gallery-sobrancelha/sobran_an.jpg',
+    after: '/gallery-sobrancelha/sobra1.jpg',
   },
   {
     title: 'Realce natural do olhar',
     before: '/gallery-sobrancelha/sobra4.jpg',
-    after: '/gallery-sobrancelha/sobra5.jpg',
+    after: '/gallery-sobrancelha/sobre7.jpg',
   },
   {
     title: 'Definição com acabamento leve',
-    before: '/gallery-sobrancelha/sobre6.jpg',
-    after: '/gallery-sobrancelha/sobre7.jpg',
+    before: '/gallery-sobrancelha/anteEdep1.jpg',
+    after: '/gallery-sobrancelha/sobra_antEdep.jpg',
   },
 ]
 
@@ -400,6 +400,7 @@ export default function ServiceDetail() {
                           aria-label={`Abrir imagem de antes: ${item.title}`}
                         >
                           <img src={item.before} alt={`Antes - ${item.title}`} loading="lazy" />
+                          <span>Antes</span>
                         </button>
                         <button
                           type="button"
@@ -408,6 +409,7 @@ export default function ServiceDetail() {
                           aria-label={`Abrir imagem de depois: ${item.title}`}
                         >
                           <img src={item.after} alt={`Depois - ${item.title}`} loading="lazy" />
+                          <span>Depois</span>
                         </button>
                       </div>
                       <p>{item.title}</p>
@@ -485,6 +487,7 @@ export default function ServiceDetail() {
                           aria-label={`Abrir imagem de antes: ${item.title}`}
                         >
                           <img src={item.before} alt={`Antes - ${item.title}`} loading="lazy" />
+                          <span>Antes</span>
                         </button>
                         <button
                           type="button"
@@ -493,6 +496,7 @@ export default function ServiceDetail() {
                           aria-label={`Abrir imagem de depois: ${item.title}`}
                         >
                           <img src={item.after} alt={`Depois - ${item.title}`} loading="lazy" />
+                          <span>Depois</span>
                         </button>
                       </div>
                       <p>{item.title}</p>

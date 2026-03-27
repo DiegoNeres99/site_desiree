@@ -490,8 +490,8 @@
 /* ─── Floating badges ─────────────────────────────────────────── */
 .hero__badge-date {
   position: absolute;
-  top: 8%;
-  right: -6%;
+  top: 12%;
+  right: -10%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -533,7 +533,7 @@
 
 .hero__badge-vagas {
   position: absolute;
-  bottom: 14%;
+  bottom: 4%;
   left: -5%;
   display: inline-flex;
   align-items: center;
@@ -624,6 +624,40 @@
 }
 
 @media (max-width: 560px) {
+  .hero__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 0;
+  }
+
+  .hero__badge-date {
+    position: static;
+    padding: 0.62rem 0.85rem 0.56rem;
+    border-radius: 14px;
+    order: 2;
+  }
+
+  .hero__badge-date strong {
+    font-size: 1.35rem;
+  }
+
+  .hero__badge-date span {
+    font-size: 0.72rem;
+  }
+
+  .hero__badge-date small {
+    font-size: 0.56rem;
+  }
+
+  .hero__badge-vagas {
+    position: static;
+    padding: 0.42rem 0.84rem;
+    font-size: 0.68rem;
+    order: 1;
+  }
+
   .hero__ctas {
     flex-direction: column;
     align-items: stretch;
