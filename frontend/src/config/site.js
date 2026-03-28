@@ -50,15 +50,13 @@ export const siteConfig = {
 
   // ─── SEO ─────────────────────────────────────────────────────────────────────
   seo: {
-    title: "Desiree Honório | Estética em Arapongas",
+    title: "Desiree Honório (@desireehonorio) | Estética em Arapongas",
     description:
-      "Especialista em design de sobrancelhas, micropigmentação e Método RevitalizeBrow em Arapongas - PR. Agende seu horário!",
+      "Desiree Honório (@desireehonorio), especialista em design de sobrancelhas, micropigmentação e Método RevitalizeBrow em Arapongas - PR. Agende seu horário!",
     keywords:
-      "design de sobrancelhas em Arapongas, micropigmentação em Arapongas, método revitalize sobrancelhas, nanopigmentação Arapongas PR, estética Arapongas PR, Desiree Honório",
-    // TODO: Substituir pela URL real do site após o deploy
+      "Desiree Honório, desireehonorio, instagram desireehonorio, design de sobrancelhas em Arapongas, micropigmentação em Arapongas, método revitalize sobrancelhas, nanopigmentação Arapongas PR, estética Arapongas PR",
     siteUrl: "https://www.desireehonorio.com.br",
-    // TODO: Adicionar imagem OG real (1200x630px) na pasta public/
-    ogImage: "/og-image.jpg",
+    ogImage: "/gallery-my/quem-sou-eu.jpg",
   },
 };
 

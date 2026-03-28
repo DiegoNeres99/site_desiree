@@ -56,10 +56,43 @@ function HomePage() {
 export default function App() {
   useScrollToHash()
   useScrollToTop()
+  const absoluteOgImage = `${siteConfig.seo.siteUrl}${siteConfig.seo.ogImage}`
   const sameAs = [
     siteConfig.social.instagram,
     siteConfig.social.facebook,
   ].filter(Boolean)
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteConfig.seo.siteUrl}/#person`,
+        "name": siteConfig.name,
+        "alternateName": siteConfig.social.instagramHandle,
+        "url": siteConfig.seo.siteUrl,
+        "image": absoluteOgImage,
+        "sameAs": [...sameAs],
+      },
+      {
+        "@type": "BeautySalon",
+        "@id": `${siteConfig.seo.siteUrl}/#business`,
+        "name": siteConfig.name,
+        "description": siteConfig.seo.description,
+        "url": siteConfig.seo.siteUrl,
+        "image": absoluteOgImage,
+        "telephone": siteConfig.phone,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": siteConfig.address.street,
+          "addressLocality": siteConfig.address.city,
+          "addressRegion": siteConfig.address.state,
+          "postalCode": siteConfig.address.cep,
+          "addressCountry": "BR",
+        },
+        "sameAs": [...sameAs],
+      },
+    ],
+  }
 
   return (
     <HelmetProvider>
@@ -73,39 +106,21 @@ export default function App() {
         <meta property="og:type"        content="website" />
         <meta property="og:title"       content={siteConfig.seo.title} />
         <meta property="og:description" content={siteConfig.seo.description} />
-        <meta property="og:image"       content={siteConfig.seo.ogImage} />
+        <meta property="og:image"       content={absoluteOgImage} />
         <meta property="og:url"         content={siteConfig.seo.siteUrl} />
         <meta property="og:locale"      content="pt_BR" />
+        <meta property="og:site_name"   content={siteConfig.name} />
 
         {/* Twitter Card */}
         <meta name="twitter:card"        content="summary_large_image" />
         <meta name="twitter:title"       content={siteConfig.seo.title} />
         <meta name="twitter:description" content={siteConfig.seo.description} />
-        <meta name="twitter:image"       content={siteConfig.seo.ogImage} />
+        <meta name="twitter:image"       content={absoluteOgImage} />
 
         {/* Canonical */}
         <link rel="canonical" href={siteConfig.seo.siteUrl} />
 
-        {/* Schema.org LocalBusiness — TODO: ajustar com dados reais */}
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BeautySalon",
-          "name": siteConfig.name,
-          "description": siteConfig.seo.description,
-          "url": siteConfig.seo.siteUrl,
-          "telephone": siteConfig.phone,
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": siteConfig.address.street,
-            "addressLocality": siteConfig.address.city,
-            "addressRegion": siteConfig.address.state,
-            "postalCode": siteConfig.address.cep,
-            "addressCountry": "BR",
-          },
-          "sameAs": [
-            ...sameAs,
-          ],
-        })}</script>
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
       <Routes>
