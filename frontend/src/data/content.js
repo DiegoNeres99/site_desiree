@@ -150,13 +150,13 @@ export const galleryImages = [
     title: "Micropigmentação — Antes e Depois",
     image: "/gallery-sobrancelha/anteEdep1.jpg",
   },
-  {
-    id: 2,
-    category: "sobrancelha",
-    label: "Sobrancelha",
-    title: "Micropigmentação Fio a Fio — Progressão",
-    image: "/gallery-sobrancelha/sobran_an.jpg",
-  },
+  // {
+  //   id: 2,
+  //   category: "sobrancelha",
+  //   label: "Sobrancelha",
+  //   title: "Micropigmentação Fio a Fio — Progressão",
+  //   image: "/gallery-sobrancelha/sobran_an.jpg",
+  // },
   {
     id: 3,
     category: "sobrancelha",
