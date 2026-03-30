@@ -231,7 +231,48 @@ export const galleryImages = [
     title: "Definição de Barba",
     image:
       "/gallery-barba/barba6.jpg",
-  },  
+  }, 
+  {
+    id: 13,
+    category: "sobrancelha",
+    label: "Sobrancelha",
+    title: "Definição de Sobrancelha",
+    image:
+      "/gallery-sobrancelha/sobra13.jpg",
+  },
+  {
+    id: 14,
+    category: "sobrancelha",
+    label: "Sobrancelha",
+    title: "Definição de Sobrancelha",
+    image:
+      "/gallery-sobrancelha/sobra14.jpg",
+  },
+  {
+    id: 15,
+    category: "sobrancelha",
+    label: "Sobrancelha",
+    title: "Definição de Sobrancelha",
+    image:
+      "/gallery-sobrancelha/sobra15.jpg",
+  },
+  {
+    id: 16,
+    category: "sobrancelha",
+    label: "Sobrancelha",
+    title: "Definição de Sobrancelha",
+    image:
+      "/gallery-sobrancelha/sobra16.jpg",
+  },
+  {
+    id: 17,
+    category: "sobrancelha",
+    label: "Sobrancelha",
+    title: "Definição de Sobrancelha",
+    image:
+      "/gallery-sobrancelha/sobra17.jpg",
+  },
+    
 ];
 
 // ─── Diferenciais (About section) ────────────────────────────────────────────
