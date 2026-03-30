@@ -177,13 +177,13 @@ export const galleryImages = [
     title: "Design de Sobrancelhas",
     image: "/gallery-sobrancelha/sobra1.jpg",
   },
-  {
-    id: 6,
-    category: "sobrancelha",
-    label: "Sobrancelha",
-    title: "Coloração de Sobrancelhas",
-    image: "/gallery-sobrancelha/sobra2.jpg",
-  },  
+  // {
+  //   id: 6,
+  //   category: "sobrancelha",
+  //   label: "Sobrancelha",
+  //   title: "Coloração de Sobrancelhas",
+  //   image: "/gallery-sobrancelha/sobra2.jpg",
+  // },  
     {
     id: 13,
     category: "sobrancelha",
