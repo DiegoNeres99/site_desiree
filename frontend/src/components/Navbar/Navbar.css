@@ -180,6 +180,8 @@
   border-left: 1px solid rgba(139, 111, 94, 0.18);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .navbar__mobile-links {
@@ -221,7 +223,7 @@
   inset: 0;
   background: rgba(26, 26, 26, 0.5);
   z-index: 940;
-  backdrop-filter: blur(4px);
+  will-change: opacity;
 }
 
 /* ── Responsividade ──────────────────────────── */
@@ -234,7 +236,6 @@
   .navbar__hamburger {
     display: flex;
     background: rgba(26, 26, 26, 0.2);
-    backdrop-filter: blur(4px);
   }
 
   .navbar--scrolled .navbar__hamburger {
@@ -244,7 +245,9 @@
 
 @media (max-width: 560px) {
   .navbar__logo .brand-logo__name {
-    display: none;
+    display: block;
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
   }
 
   .navbar__mobile-menu {

@@ -167,8 +167,8 @@ export const galleryImages = [
   { id: 4,
     category: "sobrancelha",
     label: "Sobrancelha",
-    title: "Sobrancelha + Cílios — Antes e Depois",
-    image: "/gallery-sobrancelha/sobre8.jpg",
+    title: "Design de Sobrancelhas — Resultado Natural",
+    image: "/gallery-sobrancelha/sobra5.jpg",
   },  
   {
     id: 5,

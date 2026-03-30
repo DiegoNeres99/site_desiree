@@ -23,7 +23,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      const isScrolled = window.scrollY > 50
+      setScrolled((prev) => (prev === isScrolled ? prev : isScrolled))
 
       const sections = navLinks.map((l) => l.href.replace('#', ''))
       const navHeight = parseInt(
@@ -36,7 +37,8 @@ export default function Navbar() {
         if (el) {
           const rect = el.getBoundingClientRect()
           if (rect.top <= navHeight + 24) {
-            setActiveSection(sections[i])
+            const nextSection = sections[i]
+            setActiveSection((prev) => (prev === nextSection ? prev : nextSection))
             break
           }
         }
@@ -44,8 +46,18 @@ export default function Navbar() {
     }
 
     handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    let ticking = false
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      window.requestAnimationFrame(() => {
+        handleScroll()
+        ticking = false
+      })
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
@@ -162,10 +174,10 @@ export default function Navbar() {
         {menuOpen && (
           <motion.div
             className="navbar__mobile-menu"
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
           >
             <ul className="navbar__mobile-links">
               {navLinks.map((link, i) => (
@@ -173,7 +185,7 @@ export default function Navbar() {
                   key={link.href}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.08 + 0.1 }}
+                  transition={{ delay: i * 0.03, duration: 0.16 }}
                 >
                   <a
                     href={link.href}
