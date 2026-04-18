@@ -112,12 +112,11 @@ export default function Hero() {
           {/* CTAs */}
           <motion.div variants={item} className="hero__ctas">
             <a
-              href={getWhatsAppLink('Olá! Quero me inscrever na Formação Pro Lash & Brow dos dias 19 e 20 de abril.')}
+              href="https://curso-lash-brow.vercel.app/#inicio"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary hero__cta-primary"
             >
-              <FaWhatsapp aria-hidden="true" />
               Quero Me Inscrever
             </a>
             <a
