@@ -48,7 +48,7 @@ export default function Navbar() {
     handleScroll()
     let ticking = false
     const onScroll = () => {
-      if (ticking) return
+      if (ticking || menuOpen) return
       ticking = true
       window.requestAnimationFrame(() => {
         handleScroll()
@@ -58,7 +58,7 @@ export default function Navbar() {
 
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [menuOpen])
 
   useEffect(() => {
     if (!menuOpen) return undefined
@@ -74,9 +74,13 @@ export default function Navbar() {
   }, [menuOpen])
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    if (menuOpen) {
+      document.documentElement.style.overflow = 'hidden'
+    } else {
+      document.documentElement.style.overflow = ''
+    }
     return () => {
-      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
     }
   }, [menuOpen])
 
@@ -180,13 +184,8 @@ export default function Navbar() {
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
           >
             <ul className="navbar__mobile-links">
-              {navLinks.map((link, i) => (
-                <motion.li
-                  key={link.href}
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.03, duration: 0.16 }}
-                >
+              {navLinks.map((link) => (
+                <li key={link.href}>
                   <a
                     href={link.href}
                     className={`navbar__mobile-link ${activeSection === link.href.replace('#', '') ? 'navbar__mobile-link--active' : ''}`}
@@ -197,7 +196,7 @@ export default function Navbar() {
                   >
                     {link.label}
                   </a>
-                </motion.li>
+                </li>
               ))}
             </ul>
             <a
@@ -213,14 +212,16 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {menuOpen && (
           <motion.div
             className="navbar__overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.22 }}
             onClick={() => setMenuOpen(false)}
+            style={{ pointerEvents: menuOpen ? 'auto' : 'none' }}
           />
         )}
       </AnimatePresence>

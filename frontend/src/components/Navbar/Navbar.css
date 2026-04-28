@@ -177,11 +177,15 @@
     calc(1.5rem + env(safe-area-inset-bottom));
   box-shadow: -8px 0 30px rgba(26, 26, 26, 0.12);
   overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   border-left: 1px solid rgba(139, 111, 94, 0.18);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   will-change: transform;
   transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 .navbar__mobile-links {
@@ -189,6 +193,7 @@
   flex-direction: column;
   gap: 0.25rem;
   flex: 1;
+  contain: layout style paint;
 }
 
 .navbar__mobile-link {
@@ -201,6 +206,9 @@
   border-bottom: 1px solid rgba(139, 111, 94, 0.14);
   border-radius: 10px;
   transition: color var(--transition), padding-left var(--transition), background var(--transition);
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .navbar__mobile-link:hover,
@@ -224,6 +232,8 @@
   background: rgba(26, 26, 26, 0.5);
   z-index: 940;
   will-change: opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* ── Responsividade ──────────────────────────── */
