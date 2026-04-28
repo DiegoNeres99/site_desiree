@@ -9,7 +9,7 @@ const EVENT_DATE = new Date('2026-04-19T09:00:00')
 const PARTICLES = Array.from({ length: 22 }, (_, i) => i)
 
 const images = [
-  '/evento-lash-brow/banner-evento-1.jpeg',
+  '/evento-lash-brow/curso2.jpg',
 ]
 
 function useCountdown(target) {
