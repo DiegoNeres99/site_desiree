@@ -87,28 +87,7 @@ export default function Hero() {
             que mais cresce na beleza — com método prático e estratégia
             para vender com segurança.
           </motion.p>
-
-          {/* countdown */}
-          <motion.div variants={item} className="hero__countdown" aria-label="Contagem regressiva para o evento">
-            <p className="hero__countdown-label">O evento começa em</p>
-            <div className="hero__countdown-row">
-              {[
-                { v: countdown.days,    l: 'dias'  },
-                { v: countdown.hours,   l: 'horas' },
-                { v: countdown.minutes, l: 'min'   },
-                { v: countdown.seconds, l: 'seg'   },
-              ].map(({ v, l }, idx) => (
-                <div key={l} className="hero__countdown-cell">
-                  {idx > 0 && <span className="hero__countdown-sep" aria-hidden="true">:</span>}
-                  <div className="hero__countdown-box">
-                    <strong>{String(v).padStart(2, '0')}</strong>
-                    <span>{l}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
+         
           {/* CTAs */}
           <motion.div variants={item} className="hero__ctas">
             <a
@@ -168,19 +147,7 @@ export default function Hero() {
             ))}
             <div className="hero__photo-shimmer" aria-hidden="true" />
           </div>
-
-          {/* floating date badge */}
-          <motion.div
-            className="hero__badge-date"
-            initial={{ opacity: 0, scale: 0.6, rotate: -12 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ delay: 1.1, duration: 0.55, type: 'spring', bounce: 0.4 }}
-          >
-            <strong>19 e 20</strong>
-            <span>de Abril</span>
-            <small>Jaguapitã · PR</small>
-          </motion.div>
-
+         
           {/* floating vagas chip */}
           <motion.div
             className="hero__badge-vagas"
@@ -194,17 +161,6 @@ export default function Hero() {
 
 
         </motion.div>
-      </div>
-
-      {/* ── MARQUEE ── */}
-      <div className="hero__marquee" aria-hidden="true">
-        <div className="hero__marquee-track">
-          {Array.from({ length: 4 }, (_, i) => (
-            <span key={i}>
-              FORMAÇÃO PRO LASH &amp; BROW&nbsp;&nbsp;•&nbsp;&nbsp;19 E 20 DE ABRIL&nbsp;&nbsp;•&nbsp;&nbsp;INSCRIÇÕES ABERTAS&nbsp;&nbsp;•&nbsp;&nbsp;
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   )
