@@ -1,168 +1,111 @@
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaWhatsapp, FaFilePdf, FaStar, FaUsers, FaAward } from 'react-icons/fa'
-import { getWhatsAppLink } from '../../config/site'
+import { FaWhatsapp, FaChevronDown } from 'react-icons/fa'
+import { siteConfig, getWhatsAppLink } from '../../config/site'
 import './Hero.css'
 
-const EVENT_DATE = new Date('2026-04-19T09:00:00')
-
-const PARTICLES = Array.from({ length: 22 }, (_, i) => i)
-
-const images = [
-  '/evento-lash-brow/curso2.jpg',
-]
-
-function useCountdown(target) {
-  const [t, setT] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-  useEffect(() => {
-    function tick() {
-      const diff = target.getTime() - Date.now()
-      if (diff <= 0) { setT({ days: 0, hours: 0, minutes: 0, seconds: 0 }); return }
-      setT({
-        days:    Math.floor(diff / 86400000),
-        hours:   Math.floor((diff % 86400000) / 3600000),
-        minutes: Math.floor((diff % 3600000)  / 60000),
-        seconds: Math.floor((diff % 60000)    / 1000),
-      })
-    }
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
-  }, [target])
-  return t
+// Variantes de animação
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.18 } },
 }
 
-const wrap = { hidden: {}, visible: { transition: { staggerChildren: 0.11 } } }
-const item = {
-  hidden:   { opacity: 0, y: 28 },
-  visible:  { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
-}
-const visual = {
-  hidden:   { opacity: 0, x: 56, scale: 0.93 },
-  visible:  { opacity: 1, x: 0,  scale: 1,   transition: { duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.25 } },
+const itemVariants = {
+  hidden:  { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 
 export default function Hero() {
-  const countdown = useCountdown(EVENT_DATE)
-  const [activeImg, setActiveImg] = useState(0)
-
-  useEffect(() => {
-    const id = setInterval(() => setActiveImg(p => (p + 1) % images.length), 8000)
-    return () => clearInterval(id)
-  }, [])
+  const scrollToWhoIAm = () => {
+    document.getElementById('quem-sou-eu')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <section id="inicio" className="hero">
-      {/* ── Background ── */}
-      <div className="hero__bg" aria-hidden="true">
-        <div className="hero__bg-glow hero__bg-glow--a" />
-        <div className="hero__bg-glow hero__bg-glow--b" />
-        <div className="hero__bg-glow hero__bg-glow--c" />
-        <div className="hero__bg-dots" />
-        {PARTICLES.map(i => (
-          <span key={i} className="hero__particle" style={{ '--i': i }} />
-        ))}
+      {/* Imagem de fundo */}
+      <div className="hero__bg">
+        <img
+          src="gallery-my/eu2.jpg"
+          alt="Desirée Honório — Especialista em sobrancelhas e micropigmentação em Arapongas"
+          className="hero__bg-img"
+          loading="eager"
+        />
+        <div className="hero__overlay" />
       </div>
 
-      <div className="container hero__grid">
-        {/* ── LEFT: CONTENT ── */}
-        <motion.div className="hero__content" variants={wrap} initial="hidden" animate="visible">
+      {/* Conteúdo */}
+      <div className="container hero__container">
+        <motion.div
+          className="hero__content"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Label */}
+          <motion.span variants={itemVariants} className="hero__label">
+            Especialista em Beleza
+          </motion.span>
 
-          <motion.div variants={item} className="hero__pill">
-            <span className="hero__pill-dot" aria-hidden="true" />
-            Evento Oficial&nbsp;&nbsp;•&nbsp;&nbsp;Inscrições Abertas
-          </motion.div>
+          {/* Título principal */}
+          <motion.h1 variants={itemVariants} className="hero__title">
+            Realça o que há de<br />
+            <em>mais bonito</em> em você
+          </motion.h1>
 
-          <motion.div variants={item} className="hero__title-group">
-            <span className="hero__title-desc">Formação de alto nível para dominar</span>
-            <h1 className="hero__title hero__title--event">
-              <span className="hero__title-pro">PRO</span>
-              <span className="hero__title-lash">LASH &amp; BROW</span>
-              <span className="hero__title-academy">ACADEMY</span>
-            </h1>
-          </motion.div>
+          {/* Divider */}
+          <motion.div variants={itemVariants} className="divider" />
 
-          <motion.p variants={item} className="hero__subtitle">
-            Dois dias de imersão presencial para quem quer entrar na área
-            que mais cresce na beleza — com método prático e estratégia
-            para vender com segurança.
+          {/* Subtexto */}
+          <motion.p variants={itemVariants} className="hero__subtitle">
+            Design de sobrancelhas · Micropigmentação · Método RevitalizeBrow
           </motion.p>
-         
           {/* CTAs */}
-          <motion.div variants={item} className="hero__ctas">
+          <motion.div variants={itemVariants} className="hero__ctas">
             <a
-              href="https://curso-lash-brow.vercel.app/#inicio"
+              href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary hero__cta-primary"
             >
-              Quero Me Inscrever
+              <FaWhatsapp />
+              Agendar Horário
             </a>
             <a
-              href="/evento-lash-brow/Pro-Lash-&-Brow.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero__cta-ghost"
+              href="#servicos"
+              className="btn btn-outline--light btn-outline hero__cta-secondary"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })
+              }}
             >
-              <FaFilePdf aria-hidden="true" />
-              Ver Apresentação
+              Nossos Serviços
             </a>
           </motion.div>
 
-          {/* Social proof */}
-          <motion.div variants={item} className="hero__proof">
-            <div className="hero__proof-item">
-              <FaUsers aria-hidden="true" />
-              <span><b>150+</b> alunas formadas</span>
-            </div>
-            <div className="hero__proof-divider" />
-            <div className="hero__proof-item hero__proof-item--stars">
-              {[1,2,3,4,5].map(s => <FaStar key={s} aria-hidden="true" />)}
-              <span><b>4.9</b> avaliação</span>
-            </div>
-            <div className="hero__proof-divider" />
-            <div className="hero__proof-item">
-              <FaAward aria-hidden="true" />
-              <span>Certificado <b>oficial</b></span>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* ── RIGHT: VISUAL ── */}
-        <motion.div className="hero__visual" variants={visual} initial="hidden" animate="visible">
-          {/* decorative corner lines */}
-          <span className="hero__deco hero__deco--tl" aria-hidden="true" />
-          <span className="hero__deco hero__deco--br" aria-hidden="true" />
-
-          {/* photo blob */}
-          <div className="hero__photo-wrap">
-            {images.map((src, i) => (
-              <img
-                key={src}
-                src={src}
-                alt={i === 0 ? 'Formação Pro Lash & Brow — turma presencial' : 'Pro Lash & Brow Academy'}
-                className={`hero__photo ${i === activeImg ? 'is-active' : ''}`}
-                loading={i === 0 ? 'eager' : 'lazy'}
-              />
+          {/* Badges */}
+          <motion.div variants={itemVariants} className="hero__badges">
+            {['8+ Anos de Experiência', '2.000+ Clientes', '100% Satisfação'].map((b) => (
+              <span key={b} className="hero__badge">{b}</span>
             ))}
-            <div className="hero__photo-shimmer" aria-hidden="true" />
-          </div>
-         
-          {/* floating vagas chip */}
-          <motion.div
-            className="hero__badge-vagas"
-            initial={{ opacity: 0, x: -24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.45, duration: 0.5 }}
-          >
-            <span className="hero__badge-vagas-dot" aria-hidden="true" />
-            Vagas limitadas
           </motion.div>
-
-
         </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.button
+          className="hero__scroll"
+          onClick={scrollToWhoIAm}
+          aria-label="Rolar para baixo"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+          >
+            <FaChevronDown />
+          </motion.div>
+        </motion.button>
       </div>
     </section>
   )
 }
-
